@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referensi Kriteria SMK3 — Regulasi, Temuan Mayor &amp; Minor</title>
+<meta name="description" content="Referensi lengkap kriteria SMK3 beserta regulasi terkait dan contoh temuan mayor serta minor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue-900: #0a0e2e;
+    --blue-800: #0d1547;
+    --blue-700: #1a237e;
+    --blue-600: #1565c0;
+    --blue-500: #1976d2;
+    --blue-400: #42a5f5;
+    --blue-300: #90caf9;
+    --blue-100: #e3f2fd;
+    --accent:   #3d5afe;
+    --accent2:  #00b0ff;
+    --white:    #ffffff;
+    --glass-bg: rgba(255,255,255,0.06);
+    --glass-border: rgba(255,255,255,0.12);
+    --card-bg:  rgba(255,255,255,0.97);
+    --card-border: rgba(210,220,240,0.8);
+    --text-dark: #1a1f3c;
+    --text-mid:  #4a5278;
+    --text-light: #8892b0;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-card: 0 4px 24px rgba(10,20,60,0.10);
+    --shadow-hover: 0 8px 36px rgba(10,20,100,0.16);
+    --transition: 0.22s cubic-bezier(.4,0,.2,1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #0a0e2e 0%, #1a237e 40%, #1565c0 70%, #0d47a1 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Animated background orbs ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 15% 20%, rgba(61,90,254,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 85% 75%, rgba(0,176,255,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(26,35,126,0.30) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ─── Page wrapper ─── */
+  .page-shell {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 24px 16px 48px;
+  }
+
+  .page-container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ─── Header ─── */
+  .page-header {
+    text-align: center;
+    padding: 36px 24px 28px;
+    margin-bottom: 28px;
+  }
+
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 99px;
+    padding: 5px 16px 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-300);
+    margin-bottom: 18px;
+    backdrop-filter: blur(8px);
+  }
+  .header-badge .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent2);
+    box-shadow: 0 0 8px var(--accent2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.6; transform:scale(1.2); }
+  }
+
+  .page-header h1 {
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .page-header h1 span {
+    background: linear-gradient(90deg, var(--accent2), #a5c8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* ─── Glass panel (wraps search + stats + cards) ─── */
+  .glass-panel {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 22px 20px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.25);
+  }
+
+  /* ─── Search bar ─── */
+  .search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-wrapper {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+  }
+  .search-icon {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.45);
+    pointer-events: none;
+    width: 16px;
+    height: 16px;
+  }
+  .search-bar input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius-sm);
+    font-size: 13.5px;
+    color: #fff;
+    font-family: inherit;
+    transition: var(--transition);
+    outline: none;
+  }
+  .search-bar input::placeholder { color: rgba(255,255,255,0.40); }
+  .search-bar input:focus {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(144,202,249,0.5);
+    box-shadow: 0 0 0 3px rgba(61,90,254,0.18);
+  }
+
+  .search-bar select {
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.5)' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 34px;
+  }
+  .search-bar select option { background: #1a237e; color: #fff; }
+  .search-bar select:focus {
+    border-color: rgba(144,202,249,0.5);
+    box-shadow: 0 0 0 3px rgba(61,90,254,0.18);
+  }
+
+  /* ─── Stats bar ─── */
+  .stats {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: var(--radius-sm);
+    padding: 10px 18px;
+    flex: 1;
+    min-width: 130px;
+  }
+  .stat-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .stat-icon.blue { background: rgba(66,165,245,0.18); }
+  .stat-icon.purple { background: rgba(123,97,255,0.18); }
+  .stat strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .stat span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+  }
+
+  /* ─── Elemen group ─── */
+  .elemen-group {
+    margin-bottom: 16px;
+  }
+
+  .elemen-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #fff;
+    padding: 13px 18px;
+    background: linear-gradient(90deg, rgba(61,90,254,0.25) 0%, rgba(0,176,255,0.10) 100%);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-md);
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    user-select: none;
+  }
+  .elemen-title:hover {
+    background: linear-gradient(90deg, rgba(61,90,254,0.38) 0%, rgba(0,176,255,0.18) 100%);
+    border-color: rgba(255,255,255,0.22);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .elemen-title .title-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .elemen-num {
+    width: 28px; height: 28px;
+    border-radius: 7px;
+    background: rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue-300);
+    flex-shrink: 0;
+  }
+  .elemen-count {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.10);
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .chevron {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  .collapsed .elemen-title .chevron { transform: rotate(-90deg); }
+
+  /* ─── Cards ─── */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 4px;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  .collapsed .cards { display: none; }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent), var(--accent2));
+    border-radius: 3px 0 0 3px;
+  }
+  .card:hover {
+    border-color: rgba(66,165,245,0.35);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  /* ─── Card header ─── */
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .klausul-badge {
+    font-size: 11px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1565c0, #1976d2);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+    box-shadow: 0 2px 8px rgba(21,101,192,0.35);
+  }
+
+  .level-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
+  }
+  .level-a  { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+  .level-t  { background: #fff8e1; color: #e65100; border-color: #ffe082; }
+  .level-l  { background: #fce4ec; color: #c62828; border-color: #f48fb1; }
+
+  .card-title {
+    font-size: 13px;
+    color: var(--text-dark);
+    font-weight: 500;
+    flex: 1;
+    min-width: 180px;
+    line-height: 1.55;
+  }
+
+  /* ─── Regulasi section ─── */
+  .regulasi-section {
+    margin-bottom: 12px;
+  }
+  .reg-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .reg-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(0,0,0,0.07);
+  }
+
+  .reg-item {
+    font-size: 12px;
+    color: var(--blue-600);
+    background: #eff6ff;
+    padding: 5px 10px 5px 12px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    border-left: 3px solid var(--blue-500);
+    line-height: 1.45;
+    display: block;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  a.reg-item:hover {
+    background: #dbeafe;
+    border-left-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(3px);
+  }
+  .reg-item .ext-icon {
+    font-size: 9px;
+    opacity: 0.55;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  /* ─── Temuan row ─── */
+  .temuan-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  @media (max-width: 560px) {
+    .temuan-row { grid-template-columns: 1fr; }
+  }
+
+  .temuan-box {
+    border-radius: var(--radius-sm);
+    padding: 11px 13px;
+    position: relative;
+    overflow: hidden;
+  }
+  .temuan-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .mayor-box {
+    background: #fff5f5;
+    border: 1px solid #fed7d7;
+  }
+  .mayor-box::before { background: linear-gradient(90deg, #e53e3e, #fc8181); }
+  .minor-box {
+    background: #fffbf0;
+    border: 1px solid #fbd38d;
+  }
+  .minor-box::before { background: linear-gradient(90deg, #dd6b20, #f6ad55); }
+
+  .temuan-label {
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .temuan-label::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .mayor-label { color: #9b2c2c; }
+  .mayor-label::before { background: #e53e3e; }
+  .minor-label { color: #7b341e; }
+  .minor-label::before { background: #dd6b20; }
+
+  .temuan-text {
+    font-size: 12px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* ─── No result ─── */
+  .no-result {
+    text-align: center;
+    padding: 48px 24px;
+    color: rgba(255,255,255,0.55);
+    font-size: 14px;
+  }
+  .no-result .icon { font-size: 36px; margin-bottom: 14px; display: block; }
+
+  /* ─── Footer ─── */
+  .page-footer {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.03em;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 520px) {
+    .glass-panel { padding: 16px 12px; }
+    .card { padding: 13px 14px; }
+    .stat { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-shell">
+  <div class="page-container">
+
+    <!-- Header -->
+    <header class="page-header">
+      <div class="header-badge"><span class="dot"></span> PP No. 50/2012 · SMK3</div>
+      <h1>Referensi Kriteria <span>SMK3</span></h1>
+      <p>Regulasi, Temuan Mayor &amp; Minor — 166 klausul, 12 elemen · Sistem Manajemen Keselamatan dan Kesehatan Kerja</p>
+      <p>by ILHAM ADITYA NUGRAHA</p>
+    </header>
+
+    <!-- Main glass panel -->
+    <div class="glass-panel">
+
+      <!-- Search bar -->
+      <div class="search-bar">
+        <div class="search-wrapper">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="8.5" cy="8.5" r="5.5"/><path d="M15 15l-3-3"/>
+          </svg>
+          <input type="text" id="searchInput" placeholder="Cari klausul, regulasi, atau deskripsi..." oninput="render()">
+        </div>
+        <select id="levelFilter" onchange="render()">
+          <option value="">Semua tingkat</option>
+          <option value="A">Tingkat Awal</option>
+          <option value="T">Tingkat Transisi</option>
+          <option value="L">Tingkat Lanjutan</option>
+        </select>
+        <select id="elemenFilter" onchange="render()">
+          <option value="">Semua elemen</option>
+        </select>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats" id="statsBar"></div>
+
+      <!-- Output -->
+      <div id="output"></div>
+
+    </div><!-- /glass-panel -->
+
+    <div class="page-footer">Data diambil dari PP No. 50 Tahun 2012 · Sistem Manajemen K3 · Kementerian Ketenagakerjaan RI</div>
+
+  </div>
+</div>
+
+<script>
+/* ── Regulation URL mapper ─────────────────────────────────────────── */
+const regLinks = {
+  /* UU */
+  "UU No. 1/1970": "https://jdih.kemnaker.go.id/data_puu/UU_1_1970.pdf",
+  "UU No. 13/2003": "https://jdih.kemnaker.go.id/data_puu/UU_13_2003.pdf",
+  "UU No. 2/2017": "https://jdih.pu.go.id/detail?id=1609",
+  "UU No. 8/1999": "https://jdih.kominfo.go.id/index.php/web/produkhukum/view/id/164",
+  "UU No. 40/2004": "https://jkn.kemkes.go.id/attachment/unduhan/UU%20Nomor%2040%20Tahun%202004.pdf",
+  "UU No. 32/2009": "https://jdih.menlhk.go.id/uploads/files/UU_32_2009.pdf",
+  "UU No. 40/2007": "https://jdih.bpk.go.id/wp-content/uploads/2012/03/uu_nomor_40_tahun_2007.pdf",
+  "UU No. 27/2022": "https://jdih.setkab.go.id/PUUdoc/176580/UU_Nomor_27_Tahun_2022.pdf",
+  /* PP */
+  "PP No. 50/2012": "https://jdih.kemnaker.go.id/data_puu/PP_50_2012.pdf",
+  "PP No. 56/2021": "https://jdih.setkab.go.id/PUUdoc/176039/PP_Nomor_56_Tahun_2021.pdf",
+  "PP No. 101/2014": "https://jdih.menlhk.go.id/uploads/files/PP_101_2014.pdf",
+  /* Permenaker / Kepmenaker */
+  "Permenaker No. 05/MEN/1996": "https://jdih.kemnaker.go.id/data_puu/Permen_5_1996.pdf",
+  "Permenaker No. 04/MEN/1987": "https://jdih.kemnaker.go.id/data_puu/Permen_4_1987.pdf",
+  "Permenaker No. PER.02/MEN/1992": "https://jdih.kemnaker.go.id/data_puu/Permen_2_1992.pdf",
+  "Permenaker No. 02/MEN/1980": "https://jdih.kemnaker.go.id/data_puu/Permen_2_1980.pdf",
+  "Permenaker No. 03/MEN/1982": "https://jdih.kemnaker.go.id/data_puu/Permen_3_1982.pdf",
+  "Permenaker No. 03/MEN/1998": "https://jdih.kemnaker.go.id/data_puu/Permen_3_1998.pdf",
+  "Permenaker No. PER.04/MEN/1980": "https://jdih.kemnaker.go.id/data_puu/Permen_4_1980.pdf",
+  "Permenaker No. PER.04/MEN/1985": "https://jdih.kemnaker.go.id/data_puu/Permen_4_1985.pdf",
+  "Permenaker No. PER.05/MEN/1985": "https://jdih.kemnaker.go.id/data_puu/Permen_5_1985.pdf",
+  "Permenaker No. 02/MEN/1989": "https://jdih.kemnaker.go.id/data_puu/Permen_2_1989.pdf",
+  "Permenaker No. PER.08/MEN/VII/2010": "https://jdih.kemnaker.go.id/data_puu/Permen_8_2010.pdf",
+  "Permenakertrans No. PER.08/MEN/VII/2010": "https://jdih.kemnaker.go.id/data_puu/Permen_8_2010.pdf",
+  "Permenaker No. PER.13/MEN/X/2011": "https://jdih.kemnaker.go.id/data_puu/Permen_13_2011.pdf",
+  "Permenaker No. PER.15/MEN/VIII/2008": "https://jdih.kemnaker.go.id/data_puu/Permen_15_2008.pdf",
+  "Permenaker No. PER.01/MEN/1980": "https://jdih.kemnaker.go.id/data_puu/Permen_1_1980.pdf",
+  "Permenaker No. PER.03/MEN/1985": "https://jdih.kemnaker.go.id/data_puu/Permen_3_1985.pdf",
+  "Permenaker No. 26/2014": "https://jdih.kemnaker.go.id/data_puu/Permen_26_2014.pdf",
+  "Permenaker No. 26/2015": "https://jdih.kemnaker.go.id/data_puu/Permen_26_2015.pdf",
+  "Permenakertrans No. PER.03/MEN/III/2011": "https://jdih.kemnaker.go.id/data_puu/Permen_3_2011.pdf",
+  "Kepmenaker No. KEP.186/MEN/1999": "https://jdih.kemnaker.go.id/data_puu/Kepmen_186_1999.pdf",
+  "Kepmenaker No. KEP.187/MEN/1999": "https://jdih.kemnaker.go.id/data_puu/Kepmen_187_1999.pdf",
+  "Kepmenaker No. KEP.51/MEN/1999": "https://jdih.kemnaker.go.id/data_puu/Kepmen_51_1999.pdf",
+  "Kepmenaker No. KEP.150/MEN/1999": "https://jdih.kemnaker.go.id/data_puu/Kepmen_150_1999.pdf",
+  "Kepmenaker No. KEP.187/MEN/1999": "https://jdih.kemnaker.go.id/data_puu/Kepmen_187_1999.pdf",
+  "Permenaker No. 05/MEN/1978": "https://jdih.kemnaker.go.id/data_puu/Permen_5_1978.pdf",
+  "Permen PUPR No. 10/2021": "https://jdih.pu.go.id/detail?id=2847",
+  /* International */
+  "ISO 45001:2018": "https://www.iso.org/standard/63787.html",
+  "OHSAS 18001:2007": "https://www.bsigroup.com/en-GB/ohsas-18001-occupational-health-and-safety/",
+  "ILO OSH 2001": "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/---publ/documents/publication/wcms_publ_9221116344_en.pdf",
+  "ILO Convention No. 155": "https://www.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C155",
+  "GRI 403": "https://www.globalreporting.org/standards/media/2089/gri-403-occupational-health-and-safety-2018.pdf",
+  "ISO/IEC 17025": "https://www.iso.org/standard/66912.html",
+  "GHS": "https://unece.org/transport/dangerous-goods/ghs-rev9-2021"
+};
+
+function getRegUrl(regText) {
+  for (const [key, url] of Object.entries(regLinks)) {
+    if (regText.includes(key)) return url;
+  }
+  // generic JDIH search fallback
+  return null;
+}
+
+function renderRegItem(r) {
+  const url = getRegUrl(r);
+  if (url) {
+    return `<a class="reg-item" href="${url}" target="_blank" rel="noopener noreferrer">${r}<span class="ext-icon">↗</span></a>`;
+  }
+  return `<span class="reg-item">${r}</span>`;
+}
+
+/* ── Data ─────────────────────────────────────────────────────────── */
+const data = [
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.1.1",lvl:"A",desc:"Kebijakan K3 tertulis, bertanggal, ditandatangani pengusaha/pengurus, menyatakan tujuan sasaran dan komitmen K3",reg:["UU No. 1/1970 Pasal 13-14 tentang Keselamatan Kerja","PP No. 50/2012 Pasal 7-8 tentang Kebijakan K3","Permenaker No. 05/MEN/1996 Elemen 1 tentang Kebijakan K3"],mayor:"Tidak terdapat kebijakan K3 tertulis sama sekali, atau kebijakan tidak ditandatangani oleh pimpinan puncak/pengurus yang berwenang",minor:"Kebijakan ada namun tidak mencantumkan tanggal, atau tujuan dan sasaran K3 tidak dinyatakan secara spesifik dan terukur"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.1.2",lvl:"T",desc:"Kebijakan disusun setelah melalui proses konsultasi dengan wakil tenaga kerja",reg:["PP No. 50/2012 Pasal 7 ayat (2)","Permenaker No. 04/MEN/1987 tentang P2K3","ILO OSH 2001 Klausul 3.1 tentang Kebijakan OSH"],mayor:"Kebijakan ditetapkan secara sepihak tanpa ada mekanisme konsultasi apapun dengan perwakilan tenaga kerja",minor:"Proses konsultasi dilakukan namun tidak terdokumentasi, atau masukan tenaga kerja tidak dipertimbangkan secara nyata"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.1.3",lvl:"A",desc:"Perusahaan mengkomunikasikan kebijakan K3 kepada seluruh tenaga kerja, tamu, kontraktor, pelanggan, dan pemasok",reg:["PP No. 50/2012 Pasal 7 ayat (2) huruf c","UU No. 13/2003 Pasal 86 tentang hak tenaga kerja atas K3","Permenaker No. 05/MEN/1996 Elemen 1.2"],mayor:"Kebijakan K3 sama sekali tidak dikomunikasikan kepada tenaga kerja dan pihak terkait, atau hanya diketahui oleh manajemen puncak",minor:"Kebijakan dikomunikasikan hanya kepada sebagian pihak (misal hanya karyawan tetap, tidak ke kontraktor/tamu)"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.1.4",lvl:"L",desc:"Kebijakan khusus dibuat untuk masalah K3 yang bersifat khusus",reg:["PP No. 50/2012 Lampiran II Klausul 1.1.4","Permenaker No. PER.08/MEN/VII/2010 tentang APD","Kepmenaker No. KEP.187/MEN/1999 tentang Bahan Kimia Berbahaya"],mayor:"Tidak terdapat kebijakan khusus padahal terdapat potensi bahaya spesifik signifikan (B3, ruang terbatas, ketinggian) yang sudah teridentifikasi",minor:"Kebijakan khusus ada namun tidak sepenuhnya mencakup semua bahaya spesifik yang teridentifikasi di tempat kerja"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.1.5",lvl:"L",desc:"Kebijakan K3 dan kebijakan khusus ditinjau ulang secara berkala untuk menjamin kesesuaian dengan perubahan",reg:["PP No. 50/2012 Pasal 7 ayat (3)","ISO 45001:2018 Klausul 5.2 tentang OH&S Policy","Permenaker No. 05/MEN/1996 Elemen 1.4"],mayor:"Tidak pernah dilakukan tinjauan ulang kebijakan K3 meskipun terjadi perubahan regulasi atau perubahan proses produksi yang signifikan",minor:"Tinjauan ulang dilakukan namun tidak terjadwal secara formal atau hasil tinjauan tidak didokumentasikan"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.1",lvl:"T",desc:"Tanggung jawab dan wewenang K3 telah ditetapkan, diinformasikan, dan didokumentasikan",reg:["PP No. 50/2012 Pasal 9 tentang Perencanaan","UU No. 1/1970 Pasal 8 dan 14","Permenaker No. 05/MEN/1996 Elemen 2"],mayor:"Tidak ada penetapan tanggung jawab K3 secara formal — tidak ada jabatan, job desc, atau penunjukan tertulis",minor:"Tanggung jawab ditetapkan namun tidak diinformasikan kepada seluruh level terkait, atau dokumentasinya tidak mutakhir"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.2",lvl:"A",desc:"Penunjukan penanggung jawab K3 harus sesuai peraturan perundang-undangan",reg:["UU No. 1/1970 Pasal 5 tentang Direktur dan Ahli K3","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","Permenaker No. 04/MEN/1987 tentang P2K3 Pasal 2"],mayor:"Penanggung jawab K3 tidak memenuhi kualifikasi yang disyaratkan regulasi (misal belum memiliki sertifikat Ahli K3 Umum sesuai ketentuan)",minor:"Penunjukan sudah ada dan berkualifikasi namun surat penunjukan resmi belum diterbitkan atau belum didaftarkan ke dinas terkait"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.3",lvl:"T",desc:"Pimpinan unit kerja bertanggung jawab atas kinerja K3 pada unit kerjanya",reg:["PP No. 50/2012 Pasal 4 tentang kewajiban pengurus","UU No. 1/1970 Pasal 8 tentang kewajiban pengurus","ISO 45001:2018 Klausul 5.3 tentang Roles and Responsibilities"],mayor:"Pimpinan unit kerja tidak memiliki tanggung jawab K3 yang ditetapkan secara formal dan tidak terlibat dalam pengelolaan K3 unitnya",minor:"Tanggung jawab K3 di tingkat unit kerja tercantum namun tidak tertuang dalam uraian jabatan (job description) secara formal"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.4",lvl:"A",desc:"Pengusaha atau pengurus bertanggung jawab secara penuh untuk menjamin pelaksanaan SMK3",reg:["PP No. 50/2012 Pasal 3 tentang kewajiban penerapan SMK3","UU No. 1/1970 Pasal 14 tentang kewajiban pengurus","UU No. 13/2003 Pasal 87 tentang SMK3"],mayor:"Tidak ada bukti keterlibatan atau komitmen nyata dari manajemen puncak/pengurus dalam pelaksanaan SMK3",minor:"Komitmen manajemen ada namun tidak konsisten atau hanya ditunjukkan pada kegiatan tertentu saja"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.5",lvl:"A",desc:"Petugas yang bertanggung jawab untuk penanganan keadaan darurat telah ditetapkan dan mendapat pelatihan",reg:["PP No. 50/2012 Klausul 6.7","Kepmenaker No. KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran","Permenaker No. PER.15/MEN/VIII/2008 tentang P3K"],mayor:"Tidak ada petugas keadaan darurat yang ditetapkan sama sekali, atau petugas yang ditetapkan belum mendapatkan pelatihan apapun",minor:"Petugas keadaan darurat telah ditetapkan dan terlatih namun jumlahnya tidak memadai atau sertifikasi sudah kadaluarsa"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.6",lvl:"A",desc:"Perusahaan mendapatkan saran-saran dari para ahli K3 dari dalam dan/atau luar perusahaan",reg:["UU No. 1/1970 Pasal 1 tentang Ahli K3","Permenaker No. PER.02/MEN/1992 tentang Ahli K3 Umum","PP No. 50/2012 Pasal 9"],mayor:"Tidak ada mekanisme untuk mendapatkan masukan/konsultasi ahli K3 padahal tingkat bahaya di tempat kerja memerlukan keahlian teknis khusus",minor:"Saran ahli K3 diperoleh namun tidak terdokumentasi atau tidak ditindaklanjuti secara sistematis"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.2.7",lvl:"L",desc:"Kinerja K3 termuat dalam laporan tahunan perusahaan atau laporan lain yang setingkat",reg:["PP No. 50/2012 Pasal 16 tentang pelaporan","UU No. 40/2007 tentang Perseroan Terbatas Pasal 66 (laporan tahunan)","GRI 403: Occupational Health and Safety"],mayor:"Laporan tahunan perusahaan tidak memuat informasi kinerja K3 apapun (statistik kecelakaan, tingkat pemenuhan, dll)",minor:"Kinerja K3 dilaporkan namun tidak komprehensif — hanya mencakup sebagian indikator atau data tidak dianalisis"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.3.1",lvl:"T",desc:"Tinjauan terhadap penerapan SMK3 meliputi kebijakan, perencanaan, pelaksanaan, pemantauan dan evaluasi telah dilakukan, dicatat, dan didokumentasikan",reg:["PP No. 50/2012 Pasal 14 tentang tinjauan ulang","ISO 45001:2018 Klausul 9.3 tentang Management Review","Permenaker No. 05/MEN/1996 Elemen 12"],mayor:"Tidak pernah dilakukan tinjauan manajemen SMK3 sama sekali, atau tidak ada catatan/rekaman tinjauan yang dapat diverifikasi",minor:"Tinjauan dilakukan namun tidak mencakup semua elemen yang disyaratkan, atau interval tinjauan terlalu jarang"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.3.2",lvl:"L",desc:"Hasil tinjauan dimasukkan dalam perencanaan tindakan manajemen",reg:["PP No. 50/2012 Pasal 14","ISO 45001:2018 Klausul 9.3 tentang output Management Review","OHSAS 18001:2007 Klausul 4.6"],mayor:"Hasil tinjauan manajemen tidak ditindaklanjuti sama sekali — tidak ada rencana tindakan atau alokasi sumber daya yang ditetapkan",minor:"Hasil tinjauan dimasukkan ke perencanaan namun tidak seluruh temuan mendapat rencana tindak lanjut yang jelas dan terukur"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.3.3",lvl:"A",desc:"Pengurus harus meninjau ulang pelaksanaan SMK3 secara berkala untuk menilai kesesuaian dan efektivitas SMK3",reg:["PP No. 50/2012 Pasal 14","UU No. 1/1970 Pasal 8","Permenaker No. 05/MEN/1996 Elemen 12.1"],mayor:"Pengurus tidak pernah melakukan tinjauan berkala terhadap SMK3 — tidak ada bukti keterlibatan manajemen puncak dalam evaluasi sistem",minor:"Tinjauan dilakukan namun tidak melibatkan manajemen puncak secara langsung atau frekuensinya tidak sesuai dengan yang dijadwalkan"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.1",lvl:"A",desc:"Keterlibatan dan penjadwalan konsultasi tenaga kerja dengan wakil perusahaan didokumentasikan dan disebarluaskan",reg:["PP No. 50/2012 Pasal 10","Permenaker No. 04/MEN/1987 tentang P2K3","ILO Convention No. 155 tentang Occupational Safety and Health"],mayor:"Tidak ada mekanisme keterlibatan atau konsultasi tenaga kerja sama sekali dalam pengelolaan K3",minor:"Mekanisme konsultasi ada namun tidak terdokumentasikan atau hasilnya tidak disebarluaskan kepada tenaga kerja"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.2",lvl:"T",desc:"Terdapat prosedur yang memudahkan konsultasi mengenai perubahan yang mempunyai implikasi terhadap K3",reg:["PP No. 50/2012 Pasal 10 tentang perencanaan K3","ISO 45001:2018 Klausul 5.4 tentang Consultation and Participation","Permenaker No. 05/MEN/1996 Elemen 3.3"],mayor:"Tidak ada prosedur konsultasi perubahan — perubahan proses/peralatan/bahan yang berdampak K3 dilakukan tanpa melibatkan tenaga kerja",minor:"Prosedur konsultasi ada namun tidak efektif atau hanya berlaku untuk sebagian jenis perubahan"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.3",lvl:"A",desc:"Perusahaan telah membentuk P2K3 sesuai dengan peraturan perundang-undangan",reg:["Permenaker No. 04/MEN/1987 tentang P2K3 Pasal 2","UU No. 1/1970 Pasal 10 tentang P2K3","PP No. 50/2012 Pasal 10"],mayor:"P2K3 belum terbentuk padahal perusahaan sudah memenuhi kriteria wajib (≥100 orang atau risiko tinggi), atau P2K3 terbentuk tanpa pengesahan dari Dinas Ketenagakerjaan",minor:"P2K3 sudah terbentuk dan disahkan namun anggotanya belum sepenuhnya memenuhi komposisi yang disyaratkan"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.4",lvl:"A",desc:"Ketua P2K3 adalah pimpinan puncak atau pengurus",reg:["Permenaker No. 04/MEN/1987 Pasal 4 tentang susunan P2K3","PP No. 50/2012 Klausul 1.4.4"],mayor:"Ketua P2K3 bukan pimpinan puncak atau pengurus yang berwenang, tidak sesuai dengan ketentuan Permenaker No. 04/MEN/1987",minor:"Ketua P2K3 adalah pimpinan puncak namun secara de facto fungsi ketua dijalankan oleh pejabat lain tanpa pendelegasian formal"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.5",lvl:"A",desc:"Sekretaris P2K3 adalah ahli K3 sesuai dengan peraturan perundang-undangan",reg:["Permenaker No. 04/MEN/1987 Pasal 4 tentang susunan P2K3","Permenaker No. PER.02/MEN/1992 tentang Ahli K3 Umum","PP No. 50/2012 Klausul 1.4.5"],mayor:"Sekretaris P2K3 bukan Ahli K3 yang memiliki sertifikat resmi sesuai Permenaker No. PER.02/MEN/1992",minor:"Sekretaris P2K3 adalah Ahli K3 namun masa berlaku sertifikatnya telah habis atau belum diperpanjang"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.6",lvl:"A",desc:"P2K3 menitikberatkan kegiatan pada pengembangan kebijakan dan prosedur mengendalikan risiko",reg:["Permenaker No. 04/MEN/1987 Pasal 3 tentang tugas P2K3","PP No. 50/2012 Pasal 10","UU No. 1/1970 Pasal 10"],mayor:"P2K3 tidak menjalankan fungsi utamanya — tidak ada rekomendasi kebijakan atau prosedur K3 yang dihasilkan dalam periode yang dievaluasi",minor:"P2K3 aktif namun kegiatannya dominan pada hal administratif, bukan pada pengendalian risiko substantif"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.7",lvl:"A",desc:"Susunan pengurus P2K3 didokumentasikan dan diinformasikan kepada tenaga kerja",reg:["Permenaker No. 04/MEN/1987 Pasal 5 tentang pendaftaran P2K3","PP No. 50/2012 Klausul 1.4.7"],mayor:"Susunan P2K3 tidak pernah diumumkan atau diinformasikan kepada tenaga kerja — tenaga kerja tidak mengetahui siapa yang bisa dihubungi",minor:"Susunan P2K3 terpasang namun tidak mutakhir atau hanya dipasang di lokasi yang tidak mudah dilihat tenaga kerja"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.8",lvl:"A",desc:"P2K3 mengadakan pertemuan secara teratur dan hasilnya disebarluaskan di tempat kerja",reg:["Permenaker No. 04/MEN/1987 Pasal 7 tentang rapat P2K3","PP No. 50/2012 Klausul 1.4.8"],mayor:"P2K3 tidak mengadakan pertemuan rutin sama sekali — tidak ada notulensi atau bukti rapat dalam periode yang diperiksa",minor:"Pertemuan rutin dilakukan namun tidak sesuai jadwal yang ditetapkan, atau hasil pertemuan tidak disebarluaskan"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.9",lvl:"A",desc:"P2K3 melaporkan kegiatannya secara teratur sesuai dengan peraturan perundang-undangan",reg:["Permenaker No. 04/MEN/1987 Pasal 12 tentang laporan P2K3","PP No. 50/2012 Klausul 1.4.9"],mayor:"P2K3 tidak pernah menyampaikan laporan kegiatan kepada Dinas Ketenagakerjaan sesuai kewajiban yang ditetapkan peraturan",minor:"Laporan P2K3 disampaikan namun tidak tepat waktu atau isinya tidak mencakup semua aspek yang disyaratkan"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.10",lvl:"L",desc:"Dibentuk kelompok-kelompok kerja dari wakil tenaga kerja sebagai penanggung jawab K3 dan diberikan pelatihan",reg:["PP No. 50/2012 Klausul 1.4.10","Permenaker No. 04/MEN/1987","ISO 45001:2018 Klausul 5.4"],mayor:"Tidak terbentuk kelompok kerja K3 di tingkat unit/bagian padahal kondisi kerja atau jumlah tenaga kerja memerlukan pengawasan K3 yang lebih rapat",minor:"Kelompok kerja terbentuk namun anggotanya belum semua mendapat pelatihan K3 yang memadai"},
+  {e:1,en:"Pembangunan dan Pemeliharaan Komitmen",k:"1.4.11",lvl:"L",desc:"Susunan kelompok-kelompok kerja yang telah terbentuk didokumentasikan dan diinformasikan kepada tenaga kerja",reg:["PP No. 50/2012 Klausul 1.4.11","Permenaker No. 04/MEN/1987"],mayor:"Susunan kelompok kerja tidak didokumentasikan dan tidak diketahui oleh tenaga kerja yang bersangkutan",minor:"Dokumentasi ada namun tidak diperbaharui setelah terjadi perubahan personil atau struktur organisasi"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.1.1",lvl:"A",desc:"Terdapat prosedur terdokumentasi untuk identifikasi potensi bahaya, penilaian, dan pengendalian risiko K3",reg:["PP No. 50/2012 Pasal 9","ISO 45001:2018 Klausul 6.1.2 tentang Hazard Identification","Permenaker No. 05/MEN/1996 Elemen 3"],mayor:"Tidak terdapat prosedur IBPPR (Identifikasi Bahaya, Penilaian dan Pengendalian Risiko) yang terdokumentasi sama sekali",minor:"Prosedur IBPPR ada namun metodologinya tidak jelas atau tidak mencakup semua jenis bahaya yang relevan di tempat kerja"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.1.2",lvl:"T",desc:"Identifikasi potensi bahaya, penilaian, dan pengendalian risiko K3 dilakukan oleh petugas yang berkompeten",reg:["PP No. 50/2012 Pasal 9 ayat (3)","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","ISO 45001:2018 Klausul 6.1.2"],mayor:"IBPPR dilakukan oleh personil yang tidak memiliki kompetensi/kualifikasi K3 yang dipersyaratkan",minor:"IBPPR dilakukan oleh personil kompeten namun prosesnya tidak melibatkan tenaga kerja yang bekerja di area yang dianalisis"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.1.3",lvl:"T",desc:"Rencana strategi K3 sekurang-kurangnya berdasarkan tinjauan awal, identifikasi bahaya, penilaian risiko, pengendalian, dan peraturan",reg:["PP No. 50/2012 Pasal 9 tentang perencanaan","ISO 45001:2018 Klausul 6.1 tentang Actions to Address Risks","Permenaker No. 05/MEN/1996 Elemen 3"],mayor:"Rencana K3 tidak mengacu pada hasil IBPPR atau tidak mempertimbangkan peraturan perundang-undangan yang berlaku",minor:"Rencana strategi K3 sudah ada namun tidak semua hasil IBPPR ditindaklanjuti dengan program pengendalian yang terukur"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.1.4",lvl:"T",desc:"Rencana strategi K3 yang ditetapkan digunakan untuk mengendalikan risiko K3 dengan tujuan dan sasaran yang terukur",reg:["PP No. 50/2012 Pasal 9","ISO 45001:2018 Klausul 6.2 tentang OH&S Objectives","OHSAS 18001:2007 Klausul 4.3.3"],mayor:"Rencana K3 tidak memuat tujuan dan sasaran yang terukur, atau rencana tidak diimplementasikan untuk mengendalikan risiko yang teridentifikasi",minor:"Tujuan dan sasaran sudah ada namun tidak semua disertai indikator yang dapat diukur atau target waktu pencapaian"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.1.5",lvl:"L",desc:"Rencana kerja dan rencana khusus untuk produk, proses, proyek, atau tempat kerja tertentu telah dibuat",reg:["PP No. 50/2012 Pasal 9","Permen PUPR No. 10/2021 tentang Pedoman Sistem Manajemen K3 Konstruksi","ISO 45001:2018 Klausul 6.1.4"],mayor:"Tidak terdapat rencana K3 khusus untuk proyek/proses berisiko tinggi yang memerlukan pengendalian khusus",minor:"Rencana khusus ada namun tidak mencakup semua fase pekerjaan atau tidak memuat sumber daya yang dialokasikan secara spesifik"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.1.6",lvl:"L",desc:"Rencana K3 diselaraskan dengan rencana sistem manajemen perusahaan",reg:["PP No. 50/2012 Pasal 9","ISO 45001:2018 Klausul 4.4 tentang OH&S Management System","UU No. 1/1970 Pasal 9"],mayor:"Rencana K3 berdiri sendiri dan tidak terintegrasi sama sekali dengan rencana bisnis atau sistem manajemen perusahaan",minor:"Ada upaya integrasi namun tidak konsisten — beberapa program K3 tidak sejalan dengan prioritas atau anggaran perusahaan"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.2.1",lvl:"T",desc:"Manual SMK3 meliputi kebijakan, tujuan, rencana, prosedur K3, instruksi kerja, formulir, catatan, dan tanggung jawab K3",reg:["PP No. 50/2012 Pasal 8 tentang pendokumentasian","ISO 45001:2018 Klausul 7.5 tentang Documented Information","Permenaker No. 05/MEN/1996 Elemen 2"],mayor:"Tidak terdapat Manual SMK3 sama sekali, atau manual yang ada tidak mencakup unsur-unsur wajib (kebijakan, prosedur, instruksi kerja)",minor:"Manual SMK3 ada namun tidak mutakhir, atau tidak mencakup semua tingkatan organisasi yang relevan"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.2.2",lvl:"L",desc:"Terdapat manual khusus yang berkaitan dengan produk, proses, atau tempat kerja tertentu",reg:["PP No. 50/2012 Klausul 2.2.2","Kepmenaker No. KEP.187/MEN/1999 tentang Pengendalian Bahan Kimia Berbahaya","Permenaker No. PER.01/MEN/1980 tentang K3 Konstruksi"],mayor:"Tidak terdapat manual/dokumen khusus untuk proses atau area yang memiliki bahaya spesifik yang memerlukan pengendalian khusus",minor:"Manual khusus ada namun tidak lengkap atau tidak mudah diakses oleh pekerja di area yang bersangkutan"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.2.3",lvl:"L",desc:"Manual SMK3 mudah didapat oleh semua personil dalam perusahaan sesuai kebutuhan",reg:["PP No. 50/2012 Klausul 2.2.3","ISO 45001:2018 Klausul 7.5.3 tentang Control of Documented Information","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Manual SMK3 hanya tersedia di satu lokasi terpusat dan tidak dapat diakses oleh pekerja di lapangan saat dibutuhkan",minor:"Manual tersedia namun beberapa versi di lokasi berbeda tidak konsisten, atau prosedur distribusinya tidak terkontrol"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.3.1",lvl:"T",desc:"Terdapat prosedur untuk mengidentifikasi, memperoleh, memelihara, dan memahami peraturan perundang-undangan K3",reg:["PP No. 50/2012 Pasal 6 tentang penerapan SMK3","ISO 45001:2018 Klausul 6.1.3 tentang Compliance Obligations","Permenaker No. 05/MEN/1996 Elemen 2.2"],mayor:"Tidak terdapat mekanisme untuk memantau peraturan K3 yang berlaku — perusahaan tidak memiliki daftar regulasi K3 yang relevan",minor:"Prosedur identifikasi regulasi ada namun tidak mencakup standar teknis dan peraturan daerah yang relevan"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.3.2",lvl:"T",desc:"Penanggung jawab untuk memelihara dan mendistribusikan informasi terbaru mengenai peraturan perundangan K3 telah ditetapkan",reg:["PP No. 50/2012 Klausul 2.3.2","ISO 45001:2018 Klausul 6.1.3","Permenaker No. 05/MEN/1996"],mayor:"Tidak ada penanggungjawab yang ditetapkan untuk memantau pembaruan regulasi K3, sehingga perubahan peraturan tidak diketahui",minor:"Penanggungjawab ditetapkan namun tidak ada mekanisme formal untuk memastikan informasi regulasi terbaru terdistribusi ke semua bagian"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.3.3",lvl:"L",desc:"Persyaratan peraturan perundang-undangan, standar, dan pedoman teknis K3 dimasukkan pada prosedur dan petunjuk kerja",reg:["PP No. 50/2012 Klausul 2.3.3","ISO 45001:2018 Klausul 6.1.3","UU No. 1/1970 Pasal 2 dan 3"],mayor:"Prosedur kerja tidak mereferensikan regulasi K3 yang relevan, sehingga kepatuhan tidak dapat diverifikasi dari dokumen prosedur",minor:"Sebagian prosedur sudah mereferensikan regulasi namun tidak semua prosedur kritis mencantumkan acuan peraturan yang berlaku"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.3.4",lvl:"T",desc:"Perubahan pada peraturan perundang-undangan dan standar K3 digunakan untuk peninjauan prosedur dan petunjuk kerja",reg:["PP No. 50/2012 Klausul 2.3.4","ISO 45001:2018 Klausul 6.1.3","Permenaker No. 05/MEN/1996 Elemen 2.2"],mayor:"Terdapat perubahan regulasi K3 yang sudah berlaku namun prosedur kerja tidak diperbarui untuk mengakomodasi perubahan tersebut",minor:"Ada mekanisme tinjauan prosedur saat regulasi berubah namun implementasinya terlambat atau tidak mencakup semua dokumen terdampak"},
+  {e:2,en:"Strategi Pendokumentasian",k:"2.4.1",lvl:"A",desc:"Informasi yang dibutuhkan mengenai kegiatan K3 disebarluaskan secara sistematis kepada seluruh pihak",reg:["PP No. 50/2012 Pasal 7 ayat (2) huruf c","UU No. 1/1970 Pasal 9 tentang kewajiban memberi informasi","Permenaker No. 05/MEN/1996 Elemen 4.2"],mayor:"Tidak ada sistem komunikasi K3 — informasi bahaya, prosedur darurat, dan kebijakan K3 tidak tersampaikan ke tenaga kerja dan pihak terkait",minor:"Informasi K3 disebarluaskan namun tidak sistematis atau tidak menjangkau kontraktor, pemasok, dan tamu yang bekerja di lokasi"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.1.1",lvl:"A",desc:"Prosedur terdokumentasi mempertimbangkan identifikasi bahaya dan pengendalian risiko pada tahap perancangan dan modifikasi",reg:["PP No. 50/2012 Klausul 3.1","ISO 45001:2018 Klausul 8.1.4 tentang Procurement","Permenaker No. PER.01/MEN/1980 tentang K3 Konstruksi"],mayor:"Tidak ada prosedur yang mengintegrasikan analisis K3 dalam tahap perancangan — modifikasi dilakukan tanpa kajian risiko terlebih dahulu",minor:"Prosedur perancangan ada namun kajian K3 hanya dilakukan pada jenis modifikasi tertentu saja"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.1.2",lvl:"T",desc:"Prosedur dan instruksi kerja yang berkaitan dengan K3 telah dikembangkan selama perancangan dan/atau modifikasi",reg:["PP No. 50/2012 Klausul 3.1.2","ISO 45001:2018 Klausul 8.1 tentang Operational Planning","Permenaker No. 05/MEN/1996 Elemen 6"],mayor:"Instruksi kerja K3 untuk peralatan/proses baru tidak disiapkan sebelum mulai dioperasikan",minor:"Instruksi kerja disiapkan namun tidak melibatkan masukan dari tenaga kerja yang akan menggunakan peralatan/proses tersebut"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.1.3",lvl:"T",desc:"Petugas yang berkompeten melakukan verifikasi bahwa perancangan dan/atau modifikasi memenuhi persyaratan K3 sebelum penggunaan",reg:["PP No. 50/2012 Klausul 3.1.3","Permenaker No. PER.05/MEN/1985 tentang Pesawat Angkat Angkut","Permenaker No. PER.04/MEN/1985 tentang Pesawat Tenaga dan Produksi"],mayor:"Verifikasi K3 tidak dilakukan sebelum penggunaan hasil rancangan — peralatan dioperasikan tanpa uji kelaikan dari pihak kompeten",minor:"Verifikasi dilakukan namun tidak oleh personil yang memiliki kompetensi teknis K3 yang sesuai untuk jenis perancangan tersebut"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.1.4",lvl:"T",desc:"Semua perubahan dan modifikasi perancangan yang mempunyai implikasi terhadap K3 diidentifikasi, didokumentasikan, ditinjau ulang, dan disetujui sebelum pelaksanaan",reg:["PP No. 50/2012 Klausul 3.1.4","ISO 45001:2018 Klausul 8.1.3 tentang Management of Change","OHSAS 18001:2007 Klausul 4.3.1"],mayor:"Perubahan signifikan dilakukan tanpa proses Management of Change — tidak ada analisis dampak K3 sebelum perubahan diimplementasikan",minor:"Proses MoC ada namun tidak semua kategori perubahan terdampak K3 dipersyaratkan melalui proses persetujuan formal"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.2.1",lvl:"T",desc:"Prosedur terdokumentasi mampu mengidentifikasi bahaya dan menilai risiko K3 bagi tenaga kerja, lingkungan, dan masyarakat dalam proses kontrak",reg:["PP No. 50/2012 Klausul 3.2.1","ISO 45001:2018 Klausul 8.1.4.1 tentang General Procurement","UU No. 2/2017 tentang Jasa Konstruksi Pasal 59"],mayor:"Tidak ada kajian K3 dalam proses pengadaan/kontrak — kontraktor dan pemasok tidak dievaluasi persyaratan K3-nya",minor:"Kajian K3 dalam kontrak ada namun tidak mencakup dampak terhadap lingkungan dan masyarakat sekitar lokasi kerja"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.2.2",lvl:"A",desc:"Identifikasi bahaya dan penilaian risiko dilakukan pada tinjauan kontrak oleh petugas yang berkompeten",reg:["PP No. 50/2012 Klausul 3.2.2","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","ISO 45001:2018 Klausul 8.1.4"],mayor:"Tinjauan kontrak tidak disertai IBPPR sama sekali, atau IBPPR dilakukan oleh personil yang tidak berkompeten di bidang K3",minor:"IBPPR dilakukan namun tidak terdokumentasikan sebagai bagian resmi dari proses tinjauan kontrak"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.2.3",lvl:"L",desc:"Kontrak ditinjau ulang untuk menjamin bahwa pemasok dapat memenuhi persyaratan K3 bagi pelanggan",reg:["PP No. 50/2012 Klausul 3.2.3","ISO 45001:2018 Klausul 8.1.4.2 tentang Contractors","UU No. 2/2017 Pasal 59 tentang K3 Konstruksi"],mayor:"Klausul K3 dalam kontrak tidak ditinjau untuk memastikan pemasok mampu memenuhi standar K3 yang dipersyaratkan",minor:"Tinjauan kontrak K3 dilakukan namun mekanisme verifikasi pemenuhan di lapangan tidak berjalan efektif"},
+  {e:3,en:"Peninjauan Ulang Desain dan Kontrak",k:"3.2.4",lvl:"L",desc:"Catatan tinjauan kontrak dipelihara dan didokumentasikan",reg:["PP No. 50/2012 Klausul 3.2.4","ISO 45001:2018 Klausul 7.5 tentang Documented Information","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Tidak terdapat catatan/rekaman tinjauan kontrak yang dapat membuktikan bahwa persyaratan K3 telah dievaluasi",minor:"Catatan ada namun tidak lengkap atau tidak dipelihara secara sistematis sehingga sulit ditelusuri saat audit"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.1.1",lvl:"A",desc:"Dokumen K3 mempunyai identifikasi status, wewenang, tanggal pengeluaran, dan tanggal modifikasi",reg:["PP No. 50/2012 Pasal 8 tentang pendokumentasian","ISO 45001:2018 Klausul 7.5.2 tentang Creating and Updating","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Dokumen K3 tidak memiliki identifikasi yang jelas — tidak ada nomor dokumen, status revisi, atau tanggal yang dapat memastikan versi yang digunakan adalah versi terkini",minor:"Identifikasi dokumen ada namun tidak konsisten antara satu dokumen dengan dokumen lainnya"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.1.2",lvl:"T",desc:"Penerima distribusi dokumen tercantum dalam dokumen tersebut",reg:["PP No. 50/2012 Klausul 4.1.2","ISO 45001:2018 Klausul 7.5.3 tentang Control of Documented Information","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Tidak ada sistem distribusi dokumen — tidak dapat dibuktikan siapa yang menerima dan menggunakan dokumen K3 yang berlaku",minor:"Daftar distribusi ada namun tidak selalu diperbarui saat terjadi perubahan dokumen atau perubahan struktur organisasi"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.1.3",lvl:"L",desc:"Dokumen K3 edisi terbaru disimpan secara sistematis pada tempat yang ditentukan",reg:["PP No. 50/2012 Klausul 4.1.3","ISO 45001:2018 Klausul 7.5.3","Permenaker No. 05/MEN/1996"],mayor:"Dokumen terbaru tidak tersimpan secara sistematis — versi dokumen yang berbeda-beda beredar di lapangan sehingga dapat menimbulkan kebingungan",minor:"Sistem penyimpanan ada namun akses ke dokumen terbaru oleh pengguna di lapangan kurang mudah"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.1.4",lvl:"L",desc:"Dokumen usang segera disingkirkan dari penggunaannya, dan yang disimpan untuk keperluan tertentu diberi tanda khusus",reg:["PP No. 50/2012 Klausul 4.1.4","ISO 45001:2018 Klausul 7.5.3","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Dokumen usang masih beredar dan digunakan di lapangan bersama dengan dokumen terbaru tanpa pembeda yang jelas",minor:"Dokumen usang sudah disingkirkan dari penggunaan aktif namun yang disimpan untuk referensi belum diberi penandaan yang jelas"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.2.1",lvl:"T",desc:"Terdapat sistem untuk membuat dan menyetujui perubahan terhadap dokumen K3",reg:["PP No. 50/2012 Klausul 4.2.1","ISO 45001:2018 Klausul 7.5.2","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Tidak ada proses formal untuk perubahan dokumen — perubahan dapat dilakukan oleh siapa saja tanpa persetujuan yang ditetapkan",minor:"Sistem persetujuan perubahan ada namun tidak semua jenis dokumen K3 tercakup dalam prosedur tersebut"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.2.2",lvl:"L",desc:"Dalam hal terjadi perubahan, diberikan alasan perubahan dan tertera dalam dokumen atau lampirannya",reg:["PP No. 50/2012 Klausul 4.2.2","ISO 45001:2018 Klausul 7.5.2","Permenaker No. 05/MEN/1996"],mayor:"Dokumen diubah tanpa pencatatan alasan perubahan — tidak dapat ditelusuri mengapa suatu prosedur dimodifikasi",minor:"Sebagian perubahan dokumen sudah mencantumkan alasan namun tidak konsisten diterapkan untuk semua revisi"},
+  {e:4,en:"Pengendalian Dokumen",k:"4.2.3",lvl:"L",desc:"Terdapat prosedur pengendalian dokumen atau daftar seluruh dokumen yang mencantumkan status setiap dokumen",reg:["PP No. 50/2012 Klausul 4.2.3","ISO 45001:2018 Klausul 7.5.3","Permenaker No. 05/MEN/1996 Elemen 2.4"],mayor:"Tidak terdapat master list dokumen K3 — tidak dapat diverifikasi apakah semua dokumen yang berlaku telah teridentifikasi dan terkontrol",minor:"Master list dokumen ada namun tidak selalu diperbarui sehingga tidak mencerminkan status aktual semua dokumen"},
+  {e:5,en:"Pembelian",k:"5.1.1",lvl:"A",desc:"Terdapat prosedur terdokumentasi yang menjamin spesifikasi teknik dan informasi K3 relevan telah diperiksa sebelum keputusan membeli",reg:["PP No. 50/2012 Klausul 5.1.1","ISO 45001:2018 Klausul 8.1.4.1 tentang Procurement","Permenaker No. 05/MEN/1996 Elemen 7"],mayor:"Tidak ada prosedur pengadaan yang mengintegrasikan persyaratan K3 — pembelian dilakukan tanpa mempertimbangkan aspek keselamatan peralatan/bahan",minor:"Prosedur ada namun persyaratan K3 hanya diperiksa untuk jenis pembelian tertentu, tidak untuk semua kategori pengadaan"},
+  {e:5,en:"Pembelian",k:"5.1.2",lvl:"A",desc:"Spesifikasi pembelian untuk sarana produksi, zat kimia, atau jasa harus dilengkapi spesifikasi yang sesuai persyaratan K3",reg:["PP No. 50/2012 Klausul 5.1.2","Kepmenaker No. KEP.187/MEN/1999 tentang Bahan Kimia Berbahaya","Permenakertrans No. PER.08/MEN/VII/2010 tentang APD"],mayor:"Spesifikasi pembelian tidak mencantumkan persyaratan K3 — peralatan dibeli tanpa memastikan kesesuaian dengan standar keselamatan",minor:"Spesifikasi K3 tercantum namun tidak semua produk wajib memenuhi persyaratan standar nasional atau internasional yang berlaku"},
+  {e:5,en:"Pembelian",k:"5.1.3",lvl:"T",desc:"Konsultasi dengan tenaga kerja yang kompeten pada saat keputusan pembelian untuk menetapkan persyaratan K3",reg:["PP No. 50/2012 Klausul 5.1.3","ISO 45001:2018 Klausul 5.4 tentang Consultation","Permenaker No. 05/MEN/1996"],mayor:"Keputusan pembelian peralatan/bahan berbahaya dilakukan tanpa melibatkan personil K3 atau tenaga kerja yang akan menggunakannya",minor:"Konsultasi dilakukan namun tidak formal atau masukan dari pengguna tidak terdokumentasikan"},
+  {e:5,en:"Pembelian",k:"5.1.4",lvl:"L",desc:"Kebutuhan pelatihan, pasokan APD, dan perubahan prosedur kerja dipertimbangkan sebelum pembelian dan penggunaannya",reg:["PP No. 50/2012 Klausul 5.1.4","Permenakertrans No. PER.08/MEN/VII/2010 tentang APD","ISO 45001:2018 Klausul 7.2 tentang Competence"],mayor:"Peralatan baru dioperasikan tanpa memastikan tersedianya APD yang sesuai dan pelatihan bagi operator",minor:"Kebutuhan APD dan pelatihan diidentifikasi sebelum penggunaan namun pengadaannya terlambat sehingga operasi berjalan tanpa kelengkapan yang memadai"},
+  {e:5,en:"Pembelian",k:"5.1.5",lvl:"L",desc:"Persyaratan K3 dievaluasi dan menjadi pertimbangan dalam seleksi pembelian",reg:["PP No. 50/2012 Klausul 5.1.5","ISO 45001:2018 Klausul 8.1.4","Permenaker No. 05/MEN/1996 Elemen 7"],mayor:"Aspek K3 tidak menjadi salah satu kriteria evaluasi dalam proses seleksi vendor/pemasok",minor:"K3 menjadi kriteria evaluasi namun bobotnya tidak signifikan dibanding harga, sehingga aspek keselamatan sering dikompromikan"},
+  {e:5,en:"Pembelian",k:"5.2.1",lvl:"A",desc:"Barang dan jasa yang dibeli diperiksa kesesuaiannya dengan spesifikasi pembelian",reg:["PP No. 50/2012 Klausul 5.2.1","Permenaker No. PER.05/MEN/1985 tentang Pesawat Angkat Angkut","Permenaker No. PER.04/MEN/1985 tentang Pesawat Tenaga"],mayor:"Barang yang diterima tidak diperiksa kesesuaiannya dengan spesifikasi K3 yang diminta sebelum digunakan",minor:"Pemeriksaan dilakukan namun tidak terdokumentasikan atau hanya mencakup aspek teknis operasional, bukan aspek keselamatan"},
+  {e:5,en:"Pembelian",k:"5.3.1",lvl:"L",desc:"Barang dan jasa yang dipasok pelanggan diidentifikasi bahaya dan dinilai risikonya sebelum digunakan",reg:["PP No. 50/2012 Klausul 5.3.1","ISO 45001:2018 Klausul 8.1.4.3 tentang Outsourcing","Kepmenaker No. KEP.187/MEN/1999"],mayor:"Peralatan/bahan yang dipasok pelanggan langsung digunakan tanpa melalui proses identifikasi bahaya dan penilaian risiko",minor:"IBPPR untuk barang pelanggan dilakukan namun tidak terdokumentasikan atau hasilnya tidak dikomunikasikan ke pengguna"},
+  {e:5,en:"Pembelian",k:"5.4.1",lvl:"L",desc:"Semua produk yang digunakan dalam proses produksi dapat diidentifikasi di seluruh tahapan produksi dan instalasi",reg:["PP No. 50/2012 Klausul 5.4.1","Kepmenaker No. KEP.187/MEN/1999 tentang pengendalian BKB","Permenaker No. PER.03/MEN/1985 tentang K3 dalam pemakaian asbes"],mayor:"Tidak ada sistem penelusuran produk — bahan berbahaya dalam proses produksi tidak dapat diidentifikasi pada setiap tahapan",minor:"Sistem identifikasi produk ada namun tidak konsisten diterapkan di semua tahapan atau lokasi produksi"},
+  {e:5,en:"Pembelian",k:"5.4.2",lvl:"L",desc:"Terdapat prosedur untuk penelusuran produk yang telah terjual jika terdapat potensi masalah K3",reg:["PP No. 50/2012 Klausul 5.4.2","UU No. 8/1999 tentang Perlindungan Konsumen","ISO 45001:2018 Klausul 8.1"],mayor:"Tidak ada prosedur recall atau penelusuran produk yang telah dipasarkan ketika ditemukan potensi masalah K3",minor:"Prosedur penelusuran ada namun belum pernah diuji efektivitasnya melalui simulasi atau latihan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.1",lvl:"A",desc:"Petugas yang kompeten telah mengidentifikasi bahaya, menilai, dan mengendalikan risiko dari suatu proses kerja",reg:["PP No. 50/2012 Pasal 9","ISO 45001:2018 Klausul 6.1.2","Permenaker No. PER.02/MEN/1992 tentang Ahli K3"],mayor:"IBPPR tidak dilakukan di area kerja yang memiliki potensi bahaya — risiko tidak dikendalikan secara sistematis",minor:"IBPPR dilakukan namun oleh petugas yang belum mendapat pelatihan identifikasi bahaya yang memadai"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.2",lvl:"T",desc:"Apabila upaya pengendalian risiko diperlukan, ditetapkan melalui hirarki pengendalian",reg:["PP No. 50/2012 Klausul 6.1.2","ISO 45001:2018 Klausul 8.1.2 tentang Hierarchy of Controls","Permenaker No. 05/MEN/1996 Elemen 6"],mayor:"Pengendalian risiko langsung ke APD (rung terakhir hierarki) tanpa mempertimbangkan eliminasi, substitusi, rekayasa, atau administratif terlebih dahulu",minor:"Hierarki pengendalian dipertimbangkan namun tidak terdokumentasikan sebagai dasar pemilihan jenis pengendalian"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.3",lvl:"T",desc:"Terdapat prosedur atau petunjuk kerja terdokumentasi berdasarkan masukan personil kompeten dan tenaga kerja terkait",reg:["PP No. 50/2012 Klausul 6.1.3","UU No. 1/1970 Pasal 9 tentang kewajiban membuat petunjuk K3","Permenaker No. 05/MEN/1996 Elemen 6.4"],mayor:"Pekerjaan berisiko tinggi dilakukan tanpa prosedur kerja aman yang terdokumentasi — tidak ada JSA/SOP K3 yang berlaku",minor:"Prosedur kerja ada namun tidak dikembangkan berdasarkan masukan dari pekerja yang melaksanakan pekerjaan tersebut"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.4",lvl:"T",desc:"Kepatuhan terhadap peraturan, standar, dan pedoman teknis diperhatikan saat mengembangkan atau modifikasi prosedur kerja",reg:["PP No. 50/2012 Klausul 6.1.4","UU No. 1/1970 Pasal 2 dan 3 tentang syarat K3","ISO 45001:2018 Klausul 6.1.3"],mayor:"Prosedur kerja baru dikembangkan tanpa mengacu pada regulasi K3 yang berlaku — terdapat ketidaksesuaian regulatori yang signifikan",minor:"Regulasi dipertimbangkan saat pembuatan prosedur namun referensi peraturan tidak dicantumkan dalam prosedur"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.5",lvl:"A",desc:"Terdapat sistem izin kerja untuk tugas berisiko tinggi",reg:["PP No. 50/2012 Klausul 6.1.5","Permenaker No. 05/MEN/1996 Elemen 6.5 tentang Permit to Work","ISO 45001:2018 Klausul 8.1.1"],mayor:"Tidak ada sistem Permit to Work (izin kerja) padahal terdapat pekerjaan ruang terbatas, ketinggian, energi berbahaya, atau hot work",minor:"Sistem izin kerja ada namun tidak mencakup semua kategori pekerjaan berisiko tinggi yang relevan di tempat kerja"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.6",lvl:"A",desc:"Alat pelindung diri disediakan sesuai kebutuhan, digunakan secara benar, dan selalu dipelihara dalam kondisi layak pakai",reg:["Permenakertrans No. PER.08/MEN/VII/2010 tentang APD Pasal 2-4","UU No. 1/1970 Pasal 9 dan 13","PP No. 50/2012 Klausul 6.1.6"],mayor:"APD tidak disediakan padahal IBPPR telah mengidentifikasi perlunya APD untuk jenis bahaya tertentu — tenaga kerja bekerja tanpa perlindungan",minor:"APD disediakan namun kondisinya tidak layak pakai atau tidak ada prosedur pemeliharaan dan penggantian yang jelas"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.7",lvl:"A",desc:"Alat pelindung diri yang digunakan dipastikan telah dinyatakan layak pakai sesuai standar dan peraturan perundang-undangan",reg:["Permenakertrans No. PER.08/MEN/VII/2010 Pasal 3 tentang APD bersertifikat","SNI terkait APD (helm, harness, sepatu, dll)","PP No. 50/2012 Klausul 6.1.7"],mayor:"APD yang digunakan tidak memiliki sertifikasi SNI atau standar yang setara — APD tidak dapat dipastikan memberikan perlindungan yang memadai",minor:"APD tersertifikasi namun tidak ada mekanisme verifikasi bahwa APD yang beredar di lapangan adalah yang tersertifikasi"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.1.8",lvl:"L",desc:"Upaya pengendalian risiko dievaluasi secara berkala apabila terjadi ketidaksesuaian atau perubahan pada proses kerja",reg:["PP No. 50/2012 Klausul 6.1.8","ISO 45001:2018 Klausul 10.2 tentang Incident, Nonconformity","Permenaker No. 05/MEN/1996 Elemen 8"],mayor:"Setelah terjadi kecelakaan atau perubahan proses, pengendalian risiko tidak dievaluasi ulang sehingga akar masalah tidak diatasi",minor:"Evaluasi dilakukan setelah kejadian namun tidak bersifat proaktif — tidak ada jadwal evaluasi berkala yang ditetapkan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.2.1",lvl:"A",desc:"Dilakukan pengawasan untuk menjamin bahwa setiap pekerjaan dilaksanakan dengan aman mengikuti prosedur yang ditentukan",reg:["UU No. 1/1970 Pasal 8 tentang kewajiban pengurus mengawasi K3","PP No. 50/2012 Klausul 6.2.1","Permenaker No. 05/MEN/1996 Elemen 6.2"],mayor:"Tidak ada pengawasan K3 di tempat kerja — pekerjaan berisiko dilakukan tanpa supervisi yang memastikan kepatuhan terhadap prosedur",minor:"Pengawasan dilakukan namun tidak mencakup semua area/waktu kerja, terutama pada shift malam atau area terpencil"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.2.2",lvl:"T",desc:"Setiap orang diawasi sesuai dengan tingkat kemampuan dan tingkat risiko tugas",reg:["PP No. 50/2012 Klausul 6.2.2","UU No. 13/2003 tentang tenaga kerja magang/baru","ISO 45001:2018 Klausul 7.2"],mayor:"Tenaga kerja baru atau yang melakukan tugas berisiko tinggi dilepas bekerja sendiri tanpa supervisi dari personil berpengalaman",minor:"Tingkat pengawasan tidak disesuaikan secara formal dengan kompetensi dan risiko tugas masing-masing pekerja"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.2.3",lvl:"T",desc:"Pengawas/penyelia ikut serta dalam identifikasi bahaya dan membuat upaya pengendalian",reg:["PP No. 50/2012 Klausul 6.2.3","ISO 45001:2018 Klausul 5.4 tentang Consultation","UU No. 1/1970 Pasal 8"],mayor:"Pengawas/penyelia tidak terlibat dalam proses IBPPR — identifikasi bahaya dilakukan hanya oleh departemen K3 tanpa input dari lini produksi",minor:"Pengawas terlibat namun keterlibatannya tidak formal atau tidak terdokumentasikan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.2.4",lvl:"T",desc:"Pengawas/penyelia diikutsertakan dalam penyelidikan dan pembuatan laporan kecelakaan dan penyakit akibat kerja",reg:["PP No. 50/2012 Klausul 6.2.4","Permenaker No. 03/MEN/1998 tentang Tata Cara Pelaporan Kecelakaan Kerja","Kepmenaker No. KEP.150/MEN/1999"],mayor:"Penyelidikan kecelakaan dilakukan tanpa melibatkan pengawas/penyelia dari unit kerja yang bersangkutan",minor:"Pengawas dilibatkan dalam investigasi namun tidak mendapat pelatihan investigasi kecelakaan yang memadai"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.2.5",lvl:"T",desc:"Pengawas/penyelia ikut serta dalam proses konsultasi",reg:["PP No. 50/2012 Klausul 6.2.5","Permenaker No. 04/MEN/1987 tentang P2K3","ISO 45001:2018 Klausul 5.4"],mayor:"Pengawas tidak dilibatkan dalam proses konsultasi K3 meskipun memiliki informasi penting tentang kondisi kerja di lapangan",minor:"Pengawas diundang dalam konsultasi namun partisipasinya tidak aktif atau masukan dari tingkat pengawas tidak dipertimbangkan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.3.1",lvl:"A",desc:"Persyaratan tugas tertentu termasuk persyaratan kesehatan diidentifikasi dan dipakai untuk menyeleksi dan menempatkan tenaga kerja",reg:["UU No. 1/1970 Pasal 8 tentang pemeriksaan kesehatan","Permenaker No. 02/MEN/1980 tentang Pemeriksaan Kesehatan","Permenaker No. 05/MEN/1996 Elemen 6.3"],mayor:"Tenaga kerja ditempatkan pada pekerjaan berisiko tinggi tanpa pemeriksaan kesehatan pra-kerja yang memastikan kondisi kesehatannya sesuai",minor:"Persyaratan kesehatan sudah ditetapkan namun pemeriksaan tidak mencakup semua parameter yang relevan dengan jenis bahaya pekerjaan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.3.2",lvl:"A",desc:"Penugasan pekerjaan harus berdasarkan kemampuan dan keterampilan serta kewenangan yang dimiliki",reg:["PP No. 50/2012 Klausul 6.3.2","UU No. 13/2003 tentang penempatan tenaga kerja","Berbagai Permenaker tentang operator/juru las/teknisi"],mayor:"Operator peralatan berbahaya tidak memiliki sertifikat kompetensi atau lisensi yang dipersyaratkan regulasi",minor:"Penugasan sudah berdasarkan kompetensi namun dokumentasi sertifikasi tidak dipantau masa berlakunya"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.4.1",lvl:"A",desc:"Pengusaha atau pengurus melakukan penilaian risiko lingkungan kerja untuk mengetahui daerah yang memerlukan pembatasan izin masuk",reg:["PP No. 50/2012 Klausul 6.4.1","Kepmenaker No. KEP.187/MEN/1999","Permenaker No. 05/MEN/1996 Elemen 6.4"],mayor:"Tidak dilakukan penilaian risiko untuk mengidentifikasi area terbatas — tidak ada pengendalian akses ke area berbahaya",minor:"Area terbatas telah diidentifikasi namun kriteria pembatasan akses tidak didasarkan pada penilaian risiko yang terdokumentasi"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.4.2",lvl:"A",desc:"Terdapat pengendalian atas daerah/tempat dengan pembatasan izin masuk",reg:["PP No. 50/2012 Klausul 6.4.2","UU No. 1/1970 Pasal 3 tentang keselamatan di tempat kerja","ISO 45001:2018 Klausul 8.1.1"],mayor:"Tidak ada pengendalian fisik atau administratif yang efektif untuk mencegah akses tidak sah ke area berbahaya",minor:"Pengendalian akses ada namun tidak konsisten diterapkan atau mudah diabaikan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.4.3",lvl:"A",desc:"Tersedianya fasilitas dan layanan di tempat kerja sesuai dengan standar dan pedoman teknis",reg:["UU No. 1/1970 Pasal 3 tentang syarat K3 (kebersihan, cahaya, suhu)","Permenaker No. 05/MEN/1978 tentang Syarat K3 di Ruang Kerja","Kepmenaker No. KEP.51/MEN/1999 tentang NAB Faktor Fisika"],mayor:"Fasilitas tempat kerja (toilet, kantin, istirahat, PPPK) tidak memenuhi standar minimum yang dipersyaratkan",minor:"Fasilitas tersedia namun kondisinya tidak terpelihara dengan baik atau tidak mencukupi untuk jumlah tenaga kerja yang ada"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.4.4",lvl:"A",desc:"Rambu-rambu K3 harus dipasang sesuai dengan standar dan pedoman teknis",reg:["PP No. 50/2012 Klausul 6.4.4","Permenakertrans No. PER.08/MEN/VII/2010 Pasal 5 tentang kewajiban memasang rambu APD","SNI 7971:2013 tentang Simbol-simbol K3","UU No. 1/1970 Pasal 14"],mayor:"Rambu K3 (bahaya, APD wajib, larangan, darurat) tidak terpasang di area yang memerlukan sesuai regulasi",minor:"Rambu sudah terpasang namun beberapa tidak sesuai standar (warna, ukuran, simbol salah) atau kondisinya sudah pudar/rusak"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.1",lvl:"T",desc:"Penjadwalan pemeriksaan dan pemeliharaan sarana produksi mencakup verifikasi alat pengaman sesuai peraturan",reg:["PP No. 50/2012 Klausul 6.5.1","Permenaker No. PER.04/MEN/1985 tentang Pesawat Tenaga dan Produksi","Permenaker No. PER.05/MEN/1985 tentang Pesawat Angkat Angkut"],mayor:"Tidak ada jadwal pemeliharaan berkala untuk sarana produksi — peralatan dioperasikan tanpa pemeriksaan preventif",minor:"Jadwal pemeliharaan ada namun tidak mencakup verifikasi semua alat pengaman (safety device) secara spesifik"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.2",lvl:"A",desc:"Semua catatan kegiatan pemeriksaan, pemeliharaan, perbaikan, dan perubahan sarana produksi harus disimpan dan dipelihara",reg:["PP No. 50/2012 Klausul 6.5.2","Permenaker No. PER.04/MEN/1985","Permenaker No. PER.05/MEN/1985"],mayor:"Rekaman pemeliharaan tidak ada — tidak dapat dibuktikan bahwa peralatan telah diperiksa dan dipelihara sesuai ketentuan",minor:"Rekaman ada namun tidak lengkap atau tidak disimpan dengan cara yang memudahkan penelusuran riwayat peralatan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.3",lvl:"A",desc:"Sarana dan peralatan produksi memiliki sertifikat yang masih berlaku sesuai persyaratan peraturan",reg:["Permenaker No. PER.04/MEN/1985 tentang sertifikasi Pesawat Tenaga","Permenaker No. PER.05/MEN/1985 tentang sertifikasi Pesawat Angkat","Permenaker No. 02/MEN/1989 tentang Instalasi Penyalur Petir"],mayor:"Peralatan wajib uji (bejana tekan, lift, crane, instalasi listrik) dioperasikan tanpa memiliki sertifikat yang masih berlaku",minor:"Sertifikat sebagian besar peralatan masih berlaku namun ada beberapa yang sudah atau hampir kedaluwarsa tanpa rencana perpanjangan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.4",lvl:"A",desc:"Pemeriksaan, pemeliharaan, perawatan, perbaikan, dan setiap perubahan harus dilakukan petugas yang kompeten dan berwenang",reg:["PP No. 50/2012 Klausul 6.5.4","Permenaker No. PER.04/MEN/1985 Pasal 6 tentang operator","Permenaker No. PER.05/MEN/1985 Pasal 6"],mayor:"Peralatan berbahaya diperbaiki/dimodifikasi oleh personil yang tidak memiliki sertifikat kompetensi teknisi yang dipersyaratkan",minor:"Pemeliharaan dilakukan oleh personil berkompeten namun tidak selalu ada pengawasan dari Ahli K3 atau pihak yang berwenang"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.5",lvl:"T",desc:"Terdapat prosedur untuk menjamin bahwa perubahan terhadap sarana dan peralatan produksi sesuai persyaratan",reg:["PP No. 50/2012 Klausul 6.5.5","ISO 45001:2018 Klausul 8.1.3 tentang Management of Change","Permenaker No. PER.04/MEN/1985"],mayor:"Perubahan peralatan dilakukan tanpa prosedur MoC yang memastikan kesesuaian dengan standar dan regulasi yang berlaku",minor:"Prosedur MoC ada namun tidak mencakup semua kategori perubahan yang relevan atau tidak memerlukan re-sertifikasi saat diperlukan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.6",lvl:"T",desc:"Terdapat prosedur permintaan pemeliharaan sarana dan peralatan produksi dengan kondisi K3 yang tidak memenuhi persyaratan",reg:["PP No. 50/2012 Klausul 6.5.6","ISO 45001:2018 Klausul 8.1.1","Permenaker No. 05/MEN/1996 Elemen 8"],mayor:"Tidak ada mekanisme pelaporan dan penanganan peralatan yang tidak aman — peralatan rusak/berbahaya tetap dioperasikan",minor:"Mekanisme pelaporan ada namun tindak lanjut perbaikan sering terlambat sehingga peralatan tidak aman digunakan untuk sementara waktu"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.7",lvl:"A",desc:"Terdapat sistem untuk penandaan bagi peralatan yang sudah tidak aman atau tidak digunakan",reg:["PP No. 50/2012 Klausul 6.5.7","ISO 45001:2018 Klausul 8.1","NFPA 70E tentang Lockout/Tagout (referensi teknis)"],mayor:"Tidak ada sistem penandaan — peralatan yang tidak aman tidak diberi tanda, sehingga berpotensi digunakan secara tidak sengaja",minor:"Sistem penandaan ada namun tidak semua peralatan yang tidak aman ditandai secara konsisten"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.8",lvl:"A",desc:"Apabila diperlukan, diterapkan sistem penguncian pengoperasian (lock out system) untuk mencegah sarana produksi dihidupkan sebelum saatnya",reg:["PP No. 50/2012 Klausul 6.5.8","OSHA 29 CFR 1910.147 tentang Lockout/Tagout (referensi teknis)","Permenaker No. 05/MEN/1996 Elemen 6.5"],mayor:"Tidak ada prosedur LOTO padahal terdapat peralatan dengan energi berbahaya (listrik, tekanan, mekanis) yang memerlukan isolasi saat perbaikan",minor:"Prosedur LOTO ada namun tidak semua jenis energi berbahaya tercakup, atau perangkat pengunci tidak tersedia untuk semua titik isolasi"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.9",lvl:"A",desc:"Terdapat prosedur yang menjamin keselamatan tenaga kerja di dekat sarana produksi pada saat pemeriksaan dan pemeliharaan",reg:["PP No. 50/2012 Klausul 6.5.9","UU No. 1/1970 Pasal 3","Permenaker No. PER.04/MEN/1985"],mayor:"Tidak ada prosedur yang melindungi keselamatan pekerja lain yang berada di sekitar area saat peralatan sedang dalam pemeliharaan",minor:"Prosedur ada namun tidak mencakup semua skenario atau penerapannya tidak konsisten di lapangan"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.5.10",lvl:"T",desc:"Terdapat penanggung jawab untuk menyetujui bahwa sarana dan peralatan produksi telah aman digunakan setelah pemeliharaan",reg:["PP No. 50/2012 Klausul 6.5.10","Permenaker No. PER.04/MEN/1985 tentang kewenangan","Permenaker No. PER.05/MEN/1985"],mayor:"Peralatan langsung dioperasikan setelah pemeliharaan tanpa persetujuan formal dari otoritas yang berwenang",minor:"Penanggung jawab ditetapkan namun proses persetujuan tidak selalu terdokumentasi dengan baik"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.6.1",lvl:"L",desc:"Apabila perusahaan dikontrak untuk menyediakan pelayanan yang tunduk pada standar K3, perlu disusun prosedur untuk menjamin pemenuhan persyaratan",reg:["PP No. 50/2012 Klausul 6.6.1","UU No. 2/2017 tentang Jasa Konstruksi","ISO 45001:2018 Klausul 8.1.4.3"],mayor:"Tidak ada prosedur untuk memastikan pelayanan yang diberikan memenuhi standar K3 yang dipersyaratkan klien/kontrak",minor:"Prosedur pemenuhan K3 dalam pelayanan ada namun tidak mencakup semua aspek yang dipersyaratkan kontrak"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.6.2",lvl:"L",desc:"Apabila perusahaan diberi pelayanan melalui kontrak yang tunduk pada standar K3, disusun prosedur untuk menjamin pemenuhan persyaratan",reg:["PP No. 50/2012 Klausul 6.6.2","ISO 45001:2018 Klausul 8.1.4.2 tentang Contractors","UU No. 2/2017 Pasal 59"],mayor:"Tidak ada mekanisme untuk memverifikasi bahwa kontraktor yang memberikan pelayanan memenuhi standar K3 yang dipersyaratkan",minor:"Verifikasi pemenuhan K3 kontraktor dilakukan namun tidak secara berkala atau hanya saat awal kontrak saja"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.1",lvl:"T",desc:"Keadaan darurat potensial di dalam dan/atau di luar tempat kerja telah diidentifikasi dan prosedurnya didokumentasikan serta diinformasikan",reg:["PP No. 50/2012 Klausul 6.7.1","Kepmenaker No. KEP.186/MEN/1999 tentang Penanggulangan Kebakaran","Permenaker No. 05/MEN/1996 Elemen 11"],mayor:"Tidak ada identifikasi keadaan darurat dan tidak ada prosedur tanggap darurat yang terdokumentasi untuk tempat kerja",minor:"Identifikasi keadaan darurat sudah ada namun belum mencakup potensi darurat yang berasal dari lingkungan sekitar (off-site emergency)"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.2",lvl:"T",desc:"Penyediaan alat/sarana dan prosedur keadaan darurat berdasarkan hasil identifikasi dan diuji serta ditinjau secara rutin",reg:["Kepmenaker No. KEP.186/MEN/1999 tentang Unit Penanggulangan Kebakaran","Permenaker No. PER.04/MEN/1980 tentang APAR","PP No. 50/2012 Klausul 6.7.2"],mayor:"Sarana darurat (APAR, hidran, alarm, jalur evakuasi) tidak tersedia atau tidak diuji secara berkala sesuai ketentuan",minor:"Sarana darurat tersedia dan diuji namun tidak semua prosedur darurat dikaji ulang setelah latihan atau kejadian"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.3",lvl:"T",desc:"Tenaga kerja mendapat instruksi dan pelatihan mengenai prosedur keadaan darurat sesuai tingkat risiko",reg:["Kepmenaker No. KEP.186/MEN/1999 tentang pelatihan penanggulangan kebakaran","Permenaker No. PER.15/MEN/VIII/2008 tentang P3K","PP No. 50/2012 Klausul 6.7.3"],mayor:"Tenaga kerja tidak pernah mendapat pelatihan atau instruksi tentang prosedur darurat — tidak ada simulasi atau drill yang dilaksanakan",minor:"Pelatihan darurat dilakukan namun tidak semua tenaga kerja mengikuti, atau frekuensinya tidak sesuai dengan tingkat risiko"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.4",lvl:"A",desc:"Petugas penanganan keadaan darurat ditetapkan, mendapat pelatihan khusus, dan diinformasikan kepada seluruh orang",reg:["Kepmenaker No. KEP.186/MEN/1999 tentang syarat regu pemadam kebakaran","Permenaker No. PER.15/MEN/VIII/2008 Pasal 5 tentang petugas P3K","PP No. 50/2012 Klausul 6.7.4"],mayor:"Tidak ada petugas darurat yang ditetapkan dan terlatih — tidak ada tim evakuasi, tim pemadam, atau petugas P3K yang ditunjuk secara resmi",minor:"Petugas darurat ditetapkan namun pelatihan yang diberikan tidak sesuai dengan jenis potensi darurat yang ada"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.5",lvl:"T",desc:"Instruksi/prosedur keadaan darurat dan hubungan darurat diperlihatkan secara jelas dan menyolok serta diketahui seluruh tenaga kerja",reg:["PP No. 50/2012 Klausul 6.7.5","Kepmenaker No. KEP.186/MEN/1999","SNI 7971:2013 tentang simbol dan rambu darurat"],mayor:"Tidak terdapat denah evakuasi, nomor darurat, atau petunjuk prosedur darurat yang dipasang di tempat kerja",minor:"Informasi darurat dipasang namun di lokasi yang tidak mudah terlihat, atau konten tidak mutakhir (nomor kontak sudah berubah)"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.6",lvl:"A",desc:"Peralatan dan sistem tanda bahaya keadaan darurat disediakan, diperiksa, diuji, dan dipelihara secara berkala",reg:["Permenaker No. PER.04/MEN/1980 tentang inspeksi APAR","Kepmenaker No. KEP.186/MEN/1999 tentang sistem deteksi kebakaran","PP No. 50/2012 Klausul 6.7.6"],mayor:"Peralatan darurat (APAR, alarm kebakaran, detektor asap) tidak pernah diperiksa atau diuji — tidak dapat dipastikan berfungsi saat darurat",minor:"Pemeriksaan dilakukan namun tidak sesuai jadwal yang ditetapkan atau catatan inspeksi tidak lengkap"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.7.7",lvl:"T",desc:"Jenis, jumlah, penempatan, dan kemudahan mendapatkan alat keadaan darurat telah sesuai dengan peraturan dan dinilai petugas kompeten",reg:["Permenaker No. PER.04/MEN/1980 tentang penempatan APAR","Kepmenaker No. KEP.186/MEN/1999 tentang jumlah dan jenis APAR","PP No. 50/2012 Klausul 6.7.7"],mayor:"Jenis atau jumlah alat darurat tidak sesuai ketentuan — misalnya APAR jenis CO2 di area oil padahal seharusnya dry powder, atau jumlah APAR kurang",minor:"Jenis dan jumlah alat darurat sudah sesuai namun penempatannya tidak optimal atau akses ke peralatan terhalang oleh objek lain"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.8.1",lvl:"A",desc:"Perusahaan telah mengevaluasi alat P3K dan menjamin bahwa sistem P3K memenuhi peraturan, standar, dan pedoman teknis",reg:["Permenaker No. PER.15/MEN/VIII/2008 tentang P3K di Tempat Kerja","PP No. 50/2012 Klausul 6.8.1","UU No. 1/1970 Pasal 8"],mayor:"Kotak P3K tidak tersedia, isinya tidak lengkap, atau tidak sesuai dengan jenis bahaya yang ada di tempat kerja",minor:"Kotak P3K tersedia namun evaluasi berkala tidak dilakukan sehingga obat/peralatan kedaluwarsa atau tidak lengkap"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.8.2",lvl:"A",desc:"Petugas P3K telah dilatih dan ditunjuk sesuai dengan peraturan perundang-undangan",reg:["Permenaker No. PER.15/MEN/VIII/2008 Pasal 5-7 tentang petugas P3K","PP No. 50/2012 Klausul 6.8.2","UU No. 1/1970 Pasal 8"],mayor:"Tidak ada petugas P3K yang ditunjuk resmi dengan sertifikat yang masih berlaku sesuai Permenaker No. PER.15/MEN/VIII/2008",minor:"Petugas P3K ditunjuk namun rasio petugas terhadap jumlah tenaga kerja belum memenuhi ketentuan minimum"},
+  {e:6,en:"Keamanan Bekerja Berdasarkan SMK3",k:"6.9.1",lvl:"L",desc:"Prosedur untuk pemulihan kondisi tenaga kerja dan sarana produksi setelah kecelakaan dan penyakit akibat kerja telah ditetapkan",reg:["PP No. 50/2012 Klausul 6.9.1","UU No. 40/2004 tentang SJSN (Jaminan Kecelakaan Kerja)","Permenaker No. 03/MEN/1998 tentang Tata Cara Pelaporan Kecelakaan"],mayor:"Tidak ada prosedur pemulihan pasca-kecelakaan — tidak ada mekanisme kembali kerja yang terencana bagi korban kecelakaan",minor:"Prosedur pemulihan ada namun tidak mencakup aspek rehabilitasi psikologis atau hanya berfokus pada pemulihan fisik/teknis saja"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.1",lvl:"A",desc:"Pemeriksaan/inspeksi terhadap tempat kerja dan cara kerja dilaksanakan secara teratur",reg:["UU No. 1/1970 Pasal 5 dan 6 tentang kewenangan inspeksi","PP No. 50/2012 Klausul 7.1.1","Permenaker No. 05/MEN/1996 Elemen 9"],mayor:"Tidak dilakukan inspeksi K3 secara teratur di tempat kerja — tidak ada jadwal dan rekaman inspeksi yang dapat diverifikasi",minor:"Inspeksi dilakukan namun tidak sesuai jadwal yang ditetapkan atau tidak mencakup semua area kerja"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.2",lvl:"T",desc:"Pemeriksaan/inspeksi dilaksanakan oleh petugas yang berkompeten dan berwenang yang telah memperoleh pelatihan identifikasi bahaya",reg:["PP No. 50/2012 Klausul 7.1.2","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","UU No. 1/1970 Pasal 5 tentang Pengawas Ketenagakerjaan"],mayor:"Inspeksi dilakukan oleh petugas yang tidak memiliki kompetensi atau pelatihan identifikasi bahaya sama sekali",minor:"Petugas inspeksi berkompeten namun tidak semua telah mendapatkan pelatihan identifikasi bahaya yang spesifik sesuai jenis bahaya di tempat kerja"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.3",lvl:"T",desc:"Pemeriksaan/inspeksi mencari masukan dari tenaga kerja yang melakukan tugas di tempat yang diperiksa",reg:["PP No. 50/2012 Klausul 7.1.3","ISO 45001:2018 Klausul 5.4 tentang Consultation","Permenaker No. 05/MEN/1996"],mayor:"Inspeksi dilakukan secara top-down tanpa melibatkan atau meminta masukan dari pekerja yang bekerja di area yang diinspeksi",minor:"Masukan pekerja dicari namun tidak terdokumentasikan sebagai bagian dari laporan inspeksi"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.4",lvl:"T",desc:"Daftar periksa (check list) tempat kerja telah disusun untuk digunakan pada saat pemeriksaan/inspeksi",reg:["PP No. 50/2012 Klausul 7.1.4","ISO 45001:2018 Klausul 9.1.1 tentang Monitoring","Permenaker No. 05/MEN/1996 Elemen 9"],mayor:"Tidak ada daftar periksa yang digunakan dalam inspeksi — inspeksi dilakukan secara informal tanpa standar yang ditetapkan",minor:"Checklist ada namun tidak spesifik untuk jenis bahaya di masing-masing area atau tidak diperbarui sesuai perubahan proses"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.5",lvl:"T",desc:"Laporan pemeriksaan/inspeksi berisi rekomendasi untuk tindakan perbaikan dan diajukan kepada pengurus dan P2K3",reg:["PP No. 50/2012 Klausul 7.1.5","Permenaker No. 04/MEN/1987 tentang tugas P2K3","UU No. 1/1970 Pasal 10"],mayor:"Temuan inspeksi tidak dilaporkan kepada manajemen atau P2K3 — tidak ada rekomendasi tindakan perbaikan yang disampaikan secara formal",minor:"Laporan inspeksi dibuat namun rekomendasi perbaikan tidak cukup spesifik atau tidak disertai prioritas dan target waktu"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.6",lvl:"T",desc:"Pengusaha atau pengurus telah menetapkan penanggung jawab untuk pelaksanaan tindakan perbaikan dari hasil laporan inspeksi",reg:["PP No. 50/2012 Klausul 7.1.6","ISO 45001:2018 Klausul 10.2","Permenaker No. 05/MEN/1996"],mayor:"Tidak ada penanggung jawab yang ditetapkan untuk menindaklanjuti temuan inspeksi — temuan dibiarkan tanpa kepemilikan tindakan",minor:"Penanggung jawab ditetapkan namun tidak diberi otoritas atau sumber daya yang cukup untuk melaksanakan perbaikan"},
+  {e:7,en:"Standar Pemantauan",k:"7.1.7",lvl:"T",desc:"Tindakan perbaikan dari hasil laporan pemeriksaan/inspeksi dipantau untuk menentukan efektivitasnya",reg:["PP No. 50/2012 Klausul 7.1.7","ISO 45001:2018 Klausul 10.2","Permenaker No. 05/MEN/1996 Elemen 9"],mayor:"Tindakan perbaikan ditetapkan namun tidak dipantau apakah telah dilaksanakan dan efektif — temuan yang sama berulang tanpa resolusi",minor:"Pemantauan dilakukan namun tidak secara sistematis atau tidak menggunakan tolak ukur yang terukur untuk menilai efektivitas"},
+  {e:7,en:"Standar Pemantauan",k:"7.2.1",lvl:"A",desc:"Pemantauan/pengukuran lingkungan kerja dilaksanakan secara teratur dan hasilnya didokumentasikan, dipelihara, dan digunakan untuk pengendalian risiko",reg:["Permenaker No. PER.13/MEN/X/2011 tentang NAB Faktor Fisika dan Kimia","Kepmenaker No. KEP.51/MEN/1999 tentang NAB Faktor Fisika","PP No. 50/2012 Klausul 7.2.1"],mayor:"Tidak dilakukan pengukuran lingkungan kerja sama sekali di area yang teridentifikasi memiliki potensi bahaya faktor lingkungan (kebisingan, kimia, dll)",minor:"Pengukuran dilakukan namun hasilnya tidak dianalisis atau tidak digunakan sebagai dasar pengendalian risiko"},
+  {e:7,en:"Standar Pemantauan",k:"7.2.2",lvl:"A",desc:"Pemantauan/pengukuran lingkungan kerja meliputi faktor fisik, kimia, biologi, ergonomi, dan psikologi",reg:["Permenaker No. PER.13/MEN/X/2011 tentang NAB faktor fisika dan kimia","PP No. 50/2012 Klausul 7.2.2","Permenaker No. 05/MEN/1996 Elemen 9.2"],mayor:"Pengukuran hanya mencakup sebagian faktor lingkungan (misal hanya kebisingan) padahal terdapat potensi bahaya faktor lain yang signifikan",minor:"Semua faktor diidentifikasi namun pengukuran untuk beberapa faktor (ergonomi, psikologi) belum dilaksanakan meskipun teridentifikasi relevan"},
+  {e:7,en:"Standar Pemantauan",k:"7.2.3",lvl:"A",desc:"Pemantauan/pengukuran lingkungan kerja dilakukan oleh petugas atau pihak yang berkompeten dan berwenang",reg:["Permenaker No. PER.13/MEN/X/2011 Pasal 4 tentang kewenangan pengukuran","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","PP No. 50/2012 Klausul 7.2.3"],mayor:"Pengukuran dilakukan oleh pihak yang tidak memiliki akreditasi atau kompetensi yang diakui oleh Kemenaker",minor:"Pengukuran dilakukan oleh pihak yang berkompeten namun peralatan ukur yang digunakan belum dikalibrasi"},
+  {e:7,en:"Standar Pemantauan",k:"7.3.1",lvl:"L",desc:"Terdapat prosedur terdokumentasi mengenai identifikasi, kalibrasi, pemeliharaan, dan penyimpanan alat pemeriksaan, ukur, dan uji K3",reg:["PP No. 50/2012 Klausul 7.3.1","ISO 45001:2018 Klausul 9.1.1 tentang Monitoring, Measurement","ISO/IEC 17025 tentang kalibrasi laboratorium"],mayor:"Tidak ada prosedur pengelolaan alat ukur K3 — peralatan digunakan tanpa jaminan akurasi dan keandalan pengukuran",minor:"Prosedur pengelolaan alat ukur ada namun tidak semua alat masuk dalam program kalibrasi yang terjadwal"},
+  {e:7,en:"Standar Pemantauan",k:"7.3.2",lvl:"L",desc:"Alat dipelihara dan dikalibrasi oleh petugas atau pihak yang berkompeten dan berwenang",reg:["PP No. 50/2012 Klausul 7.3.2","ISO/IEC 17025 tentang kalibrasi","Permenaker No. PER.02/MEN/1992"],mayor:"Alat ukur K3 digunakan tanpa kalibrasi oleh pihak yang terakreditasi — data pengukuran tidak dapat dijamin akurasinya",minor:"Kalibrasi dilakukan namun tidak oleh laboratorium kalibrasi yang terakreditasi KAN atau lembaga yang setara"},
+  {e:7,en:"Standar Pemantauan",k:"7.4.1",lvl:"A",desc:"Dilakukan pemantauan kesehatan tenaga kerja yang bekerja pada tempat kerja yang mengandung potensi bahaya tinggi sesuai peraturan",reg:["Permenaker No. 02/MEN/1980 tentang Pemeriksaan Kesehatan Tenaga Kerja","UU No. 1/1970 Pasal 8","PP No. 50/2012 Klausul 7.4.1"],mayor:"Tidak dilakukan pemeriksaan kesehatan berkala (medical surveillance) bagi pekerja yang terpapar bahaya tinggi (B3, kebisingan, debu)",minor:"Pemeriksaan kesehatan berkala dilakukan namun parameternya tidak sesuai dengan jenis pajanan yang dialami pekerja"},
+  {e:7,en:"Standar Pemantauan",k:"7.4.2",lvl:"T",desc:"Pengusaha atau pengurus telah melaksanakan identifikasi keadaan di mana pemeriksaan kesehatan perlu dilakukan",reg:["Permenaker No. 02/MEN/1980 Pasal 3 tentang pemeriksaan kesehatan khusus","PP No. 50/2012 Klausul 7.4.2","UU No. 1/1970 Pasal 8"],mayor:"Tidak ada sistem untuk mengidentifikasi kondisi kerja yang memerlukan pemeriksaan kesehatan khusus — semua pekerja diperlakukan sama tanpa mempertimbangkan bahaya spesifik",minor:"Identifikasi dilakukan namun tidak mencakup semua kondisi kerja yang relevan atau tidak diperbarui saat proses berubah"},
+  {e:7,en:"Standar Pemantauan",k:"7.4.3",lvl:"A",desc:"Pemeriksaan kesehatan tenaga kerja dilakukan oleh dokter pemeriksa yang ditunjuk sesuai peraturan perundang-undangan",reg:["Permenaker No. 02/MEN/1980 Pasal 1 tentang dokter pemeriksa","UU No. 1/1970 Pasal 8","PP No. 50/2012 Klausul 7.4.3"],mayor:"Pemeriksaan kesehatan dilakukan oleh dokter yang tidak memiliki penunjukan dari Kemenaker sebagai dokter pemeriksa K3",minor:"Dokter pemeriksa memiliki penunjukan namun tidak melaporkan hasil pemeriksaan ke instansi yang berwenang"},
+  {e:7,en:"Standar Pemantauan",k:"7.4.4",lvl:"A",desc:"Perusahaan menyediakan pelayanan kesehatan kerja sesuai peraturan perundang-undangan",reg:["PP No. 56/2021 tentang Penyelenggaraan Hari Tanpa Tembakau","Permenaker No. 03/MEN/1982 tentang Pelayanan Kesehatan Kerja","UU No. 1/1970 Pasal 8"],mayor:"Perusahaan tidak menyelenggarakan pelayanan kesehatan kerja padahal jumlah tenaga kerja atau jenis bahaya mewajibkannya",minor:"Pelayanan kesehatan kerja ada namun tidak memenuhi standar Permenaker No. 03/MEN/1982 (fasilitas, tenaga, atau cakupan pelayanan)"},
+  {e:7,en:"Standar Pemantauan",k:"7.4.5",lvl:"A",desc:"Catatan mengenai pemantauan kesehatan tenaga kerja dibuat sesuai dengan peraturan perundang-undangan",reg:["Permenaker No. 02/MEN/1980 Pasal 5 tentang catatan pemeriksaan","PP No. 50/2012 Klausul 7.4.5","UU No. 1/1970 Pasal 8"],mayor:"Rekaman hasil pemeriksaan kesehatan tidak disimpan atau tidak dapat ditelusuri untuk setiap tenaga kerja",minor:"Rekaman ada namun tidak lengkap atau tidak disimpan dengan menjaga kerahasiaan data medis pekerja"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.1.1",lvl:"T",desc:"Terdapat prosedur pelaporan bahaya yang berhubungan dengan K3 dan diketahui oleh tenaga kerja",reg:["PP No. 50/2012 Klausul 8.1.1","UU No. 1/1970 Pasal 12 tentang hak dan kewajiban TK melaporkan bahaya","ISO 45001:2018 Klausul 10.2"],mayor:"Tidak ada mekanisme pelaporan bahaya — tenaga kerja tidak mengetahui cara melaporkan kondisi tidak aman atau tindakan tidak aman",minor:"Prosedur pelaporan bahaya ada namun tidak disosialisasikan secara efektif atau tidak ada budaya pelaporan yang positif"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.2.1",lvl:"T",desc:"Terdapat prosedur terdokumentasi yang menjamin semua kecelakaan kerja, penyakit akibat kerja, dan kejadian berbahaya dicatat dan dilaporkan",reg:["Permenaker No. 03/MEN/1998 tentang Tata Cara Pelaporan dan Pemeriksaan Kecelakaan","UU No. 1/1970 Pasal 11","PP No. 50/2012 Klausul 8.2.1"],mayor:"Kecelakaan kerja tidak dilaporkan kepada instansi yang berwenang sesuai ketentuan Permenaker No. 03/MEN/1998",minor:"Prosedur pelaporan ada namun tidak semua jenis kejadian (near miss, first aid case) diwajibkan untuk dilaporkan dan dicatat"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.3.1",lvl:"A",desc:"Tempat kerja/perusahaan mempunyai prosedur pemeriksaan dan pengkajian kecelakaan kerja dan penyakit akibat kerja",reg:["Permenaker No. 03/MEN/1998 tentang Tata Cara Pelaporan dan Pemeriksaan Kecelakaan Pasal 10","PP No. 50/2012 Klausul 8.3.1","ISO 45001:2018 Klausul 10.1"],mayor:"Tidak ada prosedur investigasi kecelakaan — kecelakaan terjadi tanpa diselidiki akar penyebabnya",minor:"Prosedur investigasi ada namun metodologinya tidak sistematis (tidak menggunakan RCA atau metode setara)"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.3.2",lvl:"T",desc:"Pemeriksaan dan pengkajian kecelakaan kerja dilakukan oleh petugas atau Ahli K3 yang ditunjuk sesuai peraturan",reg:["Permenaker No. 03/MEN/1998 Pasal 10 tentang tim investigasi","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","PP No. 50/2012 Klausul 8.3.2"],mayor:"Investigasi kecelakaan dilakukan tanpa melibatkan Ahli K3 atau petugas yang berkompeten dalam analisis kecelakaan",minor:"Investigasi melibatkan personil kompeten namun tim investigasi tidak independen dari unit kerja yang terlibat"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.3.3",lvl:"L",desc:"Laporan pemeriksaan dan pengkajian berisi sebab dan akibat serta rekomendasi/saran dan jadwal perbaikan",reg:["Permenaker No. 03/MEN/1998 tentang format laporan kecelakaan","PP No. 50/2012 Klausul 8.3.3","ISO 45001:2018 Klausul 10.1"],mayor:"Laporan investigasi tidak memuat analisis akar penyebab (root cause) atau rekomendasi perbaikan yang konkret",minor:"Laporan memuat rekomendasi namun tanpa jadwal waktu pelaksanaan atau penanggungjawab yang jelas"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.3.4",lvl:"L",desc:"Penanggung jawab untuk melaksanakan tindakan perbaikan atas laporan pemeriksaan dan pengkajian telah ditetapkan",reg:["PP No. 50/2012 Klausul 8.3.4","ISO 45001:2018 Klausul 10.2","Permenaker No. 03/MEN/1998"],mayor:"Rekomendasi perbaikan dari investigasi tidak ditugaskan kepada siapapun — tidak ada yang bertanggung jawab untuk menindaklanjuti",minor:"Penanggung jawab ditetapkan namun batas waktu penyelesaian tidak ditetapkan atau tidak dimonitor"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.3.5",lvl:"L",desc:"Tindakan perbaikan diinformasikan kepada tenaga kerja yang bekerja di tempat terjadinya kecelakaan",reg:["PP No. 50/2012 Klausul 8.3.5","ISO 45001:2018 Klausul 7.4 tentang Communication","UU No. 1/1970 Pasal 9"],mayor:"Tenaga kerja di area kejadian tidak diberitahu tentang penyebab kecelakaan dan perbaikan yang dilakukan — potensi kejadian berulang tidak dicegah",minor:"Informasi disampaikan namun tidak formal atau tidak menjangkau semua tenaga kerja yang bekerja di area terdampak"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.3.6",lvl:"L",desc:"Pelaksanaan tindakan perbaikan dipantau, didokumentasikan, dan diinformasikan ke seluruh tenaga kerja",reg:["PP No. 50/2012 Klausul 8.3.6","ISO 45001:2018 Klausul 10.2","Permenaker No. 03/MEN/1998"],mayor:"Tindakan perbaikan ditetapkan namun tidak dipantau pelaksanaannya — tidak ada bukti bahwa perbaikan benar-benar dilaksanakan",minor:"Pemantauan dilakukan namun hasilnya tidak dikomunikasikan secara luas ke seluruh tenaga kerja"},
+  {e:8,en:"Pelaporan dan Perbaikan Kekurangan",k:"8.4.1",lvl:"L",desc:"Terdapat prosedur untuk menangani masalah keselamatan dan kesehatan yang timbul dan sesuai dengan peraturan",reg:["PP No. 50/2012 Klausul 8.4.1","UU No. 13/2003 Pasal 86 tentang hak TK atas K3","ISO 45001:2018 Klausul 10.2"],mayor:"Tidak ada mekanisme resmi untuk menangani keluhan atau masalah K3 yang dilaporkan oleh tenaga kerja",minor:"Mekanisme penanganan masalah K3 ada namun respons terhadap masalah yang dilaporkan seringkali lambat atau tidak terstruktur"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.1.1",lvl:"A",desc:"Terdapat prosedur untuk mengidentifikasi potensi bahaya dan menilai risiko yang berhubungan dengan penanganan secara manual dan mekanis",reg:["PP No. 50/2012 Klausul 9.1.1","Permenaker No. 05/MEN/1996 Elemen 7","ISO 45001:2018 Klausul 6.1.2"],mayor:"Tidak ada prosedur IBPPR untuk kegiatan penanganan material — bahaya ergonomi, tertimpa, dan terjepit tidak dikelola secara sistematis",minor:"Prosedur ada namun tidak mencakup semua metode penanganan (misal hanya manual handling, tidak mencakup forklift)"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.1.2",lvl:"A",desc:"Identifikasi bahaya dan penilaian risiko dilaksanakan oleh petugas yang berkompeten dan berwenang",reg:["PP No. 50/2012 Klausul 9.1.2","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","ISO 45001:2018 Klausul 6.1.2"],mayor:"IBPPR penanganan material dilakukan tanpa keterlibatan personil berkompeten K3",minor:"Personil berkompeten dilibatkan namun tidak semua area penanganan material telah dikaji risikonya"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.1.3",lvl:"T",desc:"Pengusaha atau pengurus menerapkan dan meninjau cara pengendalian risiko yang berhubungan dengan penanganan manual atau mekanis",reg:["PP No. 50/2012 Klausul 9.1.3","ISO 45001:2018 Klausul 8.1.1","Permenaker No. 05/MEN/1996"],mayor:"Pengendalian risiko untuk kegiatan penanganan material tidak diterapkan meskipun IBPPR telah mengidentifikasi bahaya yang signifikan",minor:"Pengendalian diterapkan namun tidak ditinjau secara berkala atau saat terjadi perubahan metode penanganan"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.1.4",lvl:"T",desc:"Terdapat prosedur untuk penanganan bahan meliputi metode pencegahan terhadap kerusakan, tumpahan, dan/atau kebocoran",reg:["PP No. 50/2012 Klausul 9.1.4","Kepmenaker No. KEP.187/MEN/1999 tentang penanganan B3","Permenaker No. 05/MEN/1996 Elemen 7"],mayor:"Tidak ada prosedur penanganan bahan berbahaya yang mencakup pencegahan dan penanganan tumpahan",minor:"Prosedur ada namun tidak mencakup semua skenario kegagalan (besar/kecil) atau tidak dilengkapi petunjuk penggunaan spill kit"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.2.1",lvl:"A",desc:"Terdapat prosedur yang menjamin bahwa bahan disimpan dan dipindahkan dengan cara yang aman sesuai peraturan perundang-undangan",reg:["PP No. 50/2012 Klausul 9.2.1","Kepmenaker No. KEP.187/MEN/1999 tentang penyimpanan B3","Permenaker No. PER.05/MEN/1985 tentang pengangkutan"],mayor:"Bahan berbahaya disimpan dengan cara yang tidak aman atau tidak sesuai peraturan — risiko kebakaran, ledakan, atau keracunan tidak dikendalikan",minor:"Sistem penyimpanan ada namun segregasi bahan yang tidak kompatibel tidak selalu diterapkan dengan benar"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.2.2",lvl:"L",desc:"Terdapat prosedur yang menjelaskan persyaratan pengendalian bahan yang dapat rusak atau kadaluarsa",reg:["PP No. 50/2012 Klausul 9.2.2","Kepmenaker No. KEP.187/MEN/1999","GHS (Globally Harmonized System) tentang pengelompokan bahan"],mayor:"Tidak ada sistem kontrol kadaluarsa — bahan kedaluwarsa (termasuk bahan kimia dan APD) dapat digunakan tanpa disadari",minor:"Sistem kontrol kadaluarsa ada namun tidak konsisten — sebagian area atau jenis bahan tidak terpantau"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.2.3",lvl:"A",desc:"Terdapat prosedur yang menjamin bahwa bahan dibuang dengan cara yang aman sesuai dengan peraturan perundang-undangan",reg:["PP No. 101/2014 tentang Pengelolaan Limbah B3","UU No. 32/2009 tentang PPLH","PP No. 50/2012 Klausul 9.2.3"],mayor:"Limbah B3 dibuang tanpa mengikuti prosedur yang sah — tidak ada manifes limbah atau kerja sama dengan pengangkut/pengolah yang berizin",minor:"Pembuangan B3 sudah melalui pihak yang berizin namun dokumentasinya tidak lengkap atau penyimpanan sementara belum sesuai standar"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.3.1",lvl:"A",desc:"Perusahaan telah mendokumentasikan dan menerapkan prosedur mengenai penyimpanan, penanganan, dan pemindahan BKB sesuai persyaratan",reg:["Kepmenaker No. KEP.187/MEN/1999 tentang Bahan Kimia Berbahaya Pasal 7","PP No. 50/2012 Klausul 9.3.1","Peraturan BAPETEN tentang Keselamatan Radiasi (bila relevan)"],mayor:"Tidak ada prosedur untuk penyimpanan dan penanganan BKB yang terdokumentasi di tempat kerja yang menggunakan bahan kimia berbahaya",minor:"Prosedur BKB ada namun tidak memuat semua tahapan penanganan atau tidak mudah diakses oleh pengguna di lapangan"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.3.2",lvl:"L",desc:"Terdapat Lembar Data Keselamatan BKB (Material Safety Data Sheets) meliputi keterangan keselamatan bahan sebagaimana diatur peraturan dan mudah diperoleh",reg:["Kepmenaker No. KEP.187/MEN/1999 Pasal 4 tentang LDKB/MSDS","PP No. 50/2012 Klausul 9.3.2","GHS (Permenakertrans No. PER.03/MEN/III/2011)"],mayor:"MSDS/LDKB tidak tersedia untuk BKB yang digunakan di tempat kerja — tenaga kerja tidak memiliki informasi keselamatan yang diperlukan",minor:"MSDS tersedia namun tidak ditempatkan di lokasi yang mudah diakses oleh pekerja di area pengguna bahan tersebut"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.3.3",lvl:"A",desc:"Terdapat sistem untuk mengidentifikasi dan pemberian label secara jelas pada bahan kimia berbahaya",reg:["Kepmenaker No. KEP.187/MEN/1999 Pasal 3 tentang pelabelan","Permenakertrans No. PER.03/MEN/III/2011 tentang GHS","PP No. 50/2012 Klausul 9.3.3"],mayor:"Bahan kimia berbahaya tidak diberi label atau label tidak mencantumkan informasi bahaya yang dipersyaratkan (GHS/LDKB)",minor:"Sistem pelabelan ada namun tidak semua wadah/tangki memiliki label yang mutakhir atau label sudah rusak/pudar"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.3.4",lvl:"A",desc:"Rambu peringatan bahaya terpasang sesuai dengan persyaratan peraturan perundang-undangan dan/atau standar yang relevan",reg:["Permenakertrans No. PER.08/MEN/VII/2010 Pasal 5 tentang kewajiban memasang rambu APD","SNI 7971:2013 tentang Simbol Keselamatan","PP No. 50/2012 Klausul 9.3.4"],mayor:"Rambu peringatan bahaya tidak terpasang di area penyimpanan atau penggunaan BKB padahal potensi bahaya telah teridentifikasi",minor:"Rambu peringatan sudah terpasang namun tidak semua sesuai standar (SNI 7971:2013) atau kondisi fisik rambu sudah tidak layak"},
+  {e:9,en:"Pengelolaan Material dan Perpindahannya",k:"9.3.5",lvl:"T",desc:"Penanganan BKB dilakukan oleh petugas yang berkompeten dan berwenang",reg:["Kepmenaker No. KEP.187/MEN/1999 Pasal 8 tentang operator B3","PP No. 50/2012 Klausul 9.3.5","Permenakertrans No. PER.08/MEN/VII/2010"],mayor:"BKB ditangani oleh personil yang tidak memiliki pelatihan atau sertifikasi penanganan bahan berbahaya yang disyaratkan",minor:"Petugas telah terlatih namun pelatihan tidak mencakup semua jenis BKB yang ada atau sertifikasi tidak diperbarui"},
+  {e:10,en:"Pengumpulan dan Penggunaan Data",k:"10.1.1",lvl:"T",desc:"Pengusaha atau pengurus telah mendokumentasikan dan menerapkan prosedur identifikasi, pengumpulan, pengarsipan, pemeliharaan, penyimpanan, dan penggantian catatan K3",reg:["PP No. 50/2012 Klausul 10.1.1","ISO 45001:2018 Klausul 7.5 tentang Documented Information","Permenaker No. 05/MEN/1996 Elemen 10"],mayor:"Tidak ada sistem pengelolaan rekaman K3 yang terdokumentasi — catatan K3 tidak dikelola secara sistematis",minor:"Prosedur pengelolaan rekaman ada namun tidak mencakup masa penyimpanan minimal yang dipersyaratkan untuk setiap jenis rekaman"},
+  {e:10,en:"Pengumpulan dan Penggunaan Data",k:"10.1.2",lvl:"T",desc:"Peraturan perundang-undangan, standar, dan pedoman teknis K3 yang relevan dipelihara pada tempat yang mudah didapat",reg:["PP No. 50/2012 Klausul 10.1.2","ISO 45001:2018 Klausul 6.1.3","Permenaker No. 05/MEN/1996"],mayor:"Tidak tersedia salinan peraturan K3 yang relevan di tempat kerja — pengguna tidak dapat mengakses regulasi yang harus dipatuhi",minor:"Peraturan tersedia namun tidak selalu dalam versi terbaru atau tidak mudah diakses oleh semua pihak yang memerlukan"},
+  {e:10,en:"Pengumpulan dan Penggunaan Data",k:"10.1.3",lvl:"L",desc:"Terdapat prosedur yang menentukan persyaratan untuk menjaga kerahasiaan catatan",reg:["PP No. 50/2012 Klausul 10.1.3","UU No. 27/2022 tentang Perlindungan Data Pribadi","Permenaker No. 02/MEN/1980 tentang kerahasiaan data kesehatan"],mayor:"Tidak ada perlindungan kerahasiaan untuk data medis dan data sensitif tenaga kerja lainnya",minor:"Prosedur kerahasiaan ada namun tidak mencakup semua jenis data sensitif atau akses belum terkontrol dengan baik"},
+  {e:10,en:"Pengumpulan dan Penggunaan Data",k:"10.1.4",lvl:"L",desc:"Catatan kompensasi kecelakaan dan rehabilitasi kesehatan tenaga kerja dipelihara",reg:["UU No. 40/2004 tentang SJSN","Permenaker No. 26/2015 tentang Penyelenggaraan Program JKK BPJS Ketenagakerjaan","PP No. 50/2012 Klausul 10.1.4"],mayor:"Catatan klaim JKK dan rehabilitasi tidak dipelihara — tidak dapat diverifikasi apakah hak korban kecelakaan telah dipenuhi",minor:"Catatan ada namun tidak lengkap atau tidak terintegrasi dengan data pemantauan kesehatan tenaga kerja"},
+  {e:10,en:"Pengumpulan dan Penggunaan Data",k:"10.2.1",lvl:"T",desc:"Data K3 yang terbaru dikumpulkan dan dianalisa",reg:["PP No. 50/2012 Klausul 10.2.1","ISO 45001:2018 Klausul 9.1.1 tentang Performance Evaluation","Permenaker No. 05/MEN/1996 Elemen 10"],mayor:"Data K3 (kecelakaan, near miss, LBRS, dll) tidak dikumpulkan secara sistematis — tidak ada database K3 yang dapat dianalisis untuk pengambilan keputusan",minor:"Data dikumpulkan namun tidak dianalisis secara berkala untuk mengidentifikasi tren dan peluang perbaikan"},
+  {e:10,en:"Pengumpulan dan Penggunaan Data",k:"10.2.2",lvl:"T",desc:"Laporan rutin kinerja K3 dibuat dan disebarluaskan di dalam tempat kerja",reg:["PP No. 50/2012 Klausul 10.2.2","ISO 45001:2018 Klausul 7.4 tentang Communication","Permenaker No. 05/MEN/1996 Elemen 10"],mayor:"Tidak ada laporan kinerja K3 yang dibuat dan dikomunikasikan secara berkala kepada tenaga kerja dan manajemen",minor:"Laporan dibuat namun tidak disebarluaskan kepada semua tenaga kerja atau hanya dikomunikasikan kepada manajemen"},
+  {e:11,en:"Audit SMK3",k:"11.1.1",lvl:"L",desc:"Audit internal SMK3 yang terjadwal dilaksanakan untuk memeriksa kesesuaian kegiatan perencanaan dan efektivitasnya",reg:["PP No. 50/2012 Pasal 16 tentang Audit SMK3","ISO 45001:2018 Klausul 9.2 tentang Internal Audit","Permenaker No. 05/MEN/1996 Elemen 11"],mayor:"Audit internal SMK3 tidak dilaksanakan sama sekali meskipun sudah tercantum dalam jadwal yang ditetapkan",minor:"Audit internal dilaksanakan namun tidak mencakup semua elemen/klausul SMK3 atau tidak sesuai jadwal yang ditetapkan"},
+  {e:11,en:"Audit SMK3",k:"11.1.2",lvl:"L",desc:"Audit internal SMK3 dilakukan oleh petugas yang independen, berkompeten, dan berwenang",reg:["PP No. 50/2012 Pasal 16 tentang Auditor SMK3","Permenaker No. 26/2014 tentang Penyelenggaraan Penilaian SMK3","ISO 45001:2018 Klausul 9.2.2"],mayor:"Audit dilakukan oleh auditor yang tidak kompeten (tidak memiliki sertifikat Auditor SMK3) atau tidak independen (mengaudit unitnya sendiri)",minor:"Kompetensi dan independensi auditor memadai namun audit tidak memanfaatkan metodologi sampling yang representatif"},
+  {e:11,en:"Audit SMK3",k:"11.1.3",lvl:"L",desc:"Laporan audit didistribusikan kepada pengusaha atau pengurus dan petugas lain yang berkepentingan, dan dipantau untuk menjamin tindakan perbaikan",reg:["PP No. 50/2012 Pasal 16","Permenaker No. 26/2014 tentang SMK3","ISO 45001:2018 Klausul 9.2.2"],mayor:"Laporan audit tidak disampaikan kepada manajemen puncak atau tidak ada tindak lanjut atas temuan audit",minor:"Laporan didistribusikan namun tindakan perbaikan tidak dipantau pelaksanaannya secara formal"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.1",lvl:"L",desc:"Analisis kebutuhan pelatihan K3 sesuai persyaratan peraturan perundang-undangan telah dilakukan",reg:["PP No. 50/2012 Klausul 12.1.1","ISO 45001:2018 Klausul 7.2 tentang Competence","Permenaker No. 05/MEN/1996 Elemen 12"],mayor:"Tidak dilakukan analisis kebutuhan pelatihan K3 — program pelatihan tidak berdasarkan gap kompetensi yang teridentifikasi",minor:"Analisis dilakukan namun tidak mencakup semua jabatan atau tidak mempertimbangkan perubahan regulasi dan proses"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.2",lvl:"T",desc:"Rencana pelatihan K3 bagi semua tingkatan telah disusun",reg:["PP No. 50/2012 Klausul 12.1.2","ISO 45001:2018 Klausul 7.2","Permenaker No. 05/MEN/1996 Elemen 12.2"],mayor:"Tidak terdapat rencana pelatihan K3 yang terdokumentasi untuk periode yang berjalan",minor:"Rencana pelatihan ada namun tidak mencakup semua tingkatan organisasi atau tidak dijadwalkan secara konkret"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.3",lvl:"L",desc:"Jenis pelatihan K3 yang dilakukan harus disesuaikan dengan kebutuhan untuk pengendalian potensi bahaya",reg:["PP No. 50/2012 Klausul 12.1.3","ISO 45001:2018 Klausul 7.2","Permenaker No. 05/MEN/1996 Elemen 12"],mayor:"Jenis pelatihan yang diberikan tidak relevan dengan bahaya yang ada — pelatihan generik diberikan tanpa mempertimbangkan bahaya spesifik",minor:"Pelatihan sudah relevan namun tidak mencakup semua jenis bahaya yang teridentifikasi di tempat kerja"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.4",lvl:"T",desc:"Pelatihan dilakukan oleh orang atau badan yang berkompeten dan berwenang sesuai peraturan perundang-undangan",reg:["PP No. 50/2012 Klausul 12.1.4","Permenaker No. PER.02/MEN/1992 tentang Ahli K3","Berbagai Permenaker tentang sertifikasi pelatih K3 spesialistik"],mayor:"Pelatihan K3 wajib (misal pelatihan operator, ahli K3, petugas pemadam) dilakukan oleh lembaga yang tidak memiliki lisensi dari Kemenaker",minor:"Pelatih sudah berwenang namun beberapa materi pelatihan tidak mutakhir dengan regulasi atau standar terkini"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.5",lvl:"T",desc:"Terdapat fasilitas dan sumber daya memadai untuk pelaksanaan pelatihan yang efektif",reg:["PP No. 50/2012 Klausul 12.1.5","ISO 45001:2018 Klausul 7.1 tentang Resources","Permenaker No. 05/MEN/1996"],mayor:"Tidak ada anggaran atau fasilitas yang dialokasikan untuk pelatihan K3 — program pelatihan tidak dapat dilaksanakan",minor:"Fasilitas dan anggaran tersedia namun tidak memadai untuk menjalankan semua program pelatihan yang direncanakan"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.6",lvl:"T",desc:"Pengusaha atau pengurus mendokumentasikan dan menyimpan catatan seluruh pelatihan",reg:["PP No. 50/2012 Klausul 12.1.6","ISO 45001:2018 Klausul 7.2","Permenaker No. 05/MEN/1996 Elemen 12.7"],mayor:"Tidak ada rekaman pelatihan K3 — tidak dapat diverifikasi kompetensi tenaga kerja berdasarkan pelatihan yang telah diterima",minor:"Rekaman pelatihan ada namun tidak lengkap (misal tidak ada daftar hadir, sertifikat, atau materi pelatihan)"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.1.7",lvl:"L",desc:"Program pelatihan ditinjau secara teratur untuk menjamin agar tetap relevan dan efektif",reg:["PP No. 50/2012 Klausul 12.1.7","ISO 45001:2018 Klausul 7.2","Permenaker No. 05/MEN/1996 Elemen 12"],mayor:"Program pelatihan tidak pernah dievaluasi efektivitasnya — tidak ada mekanisme untuk menilai apakah pelatihan mencapai tujuannya",minor:"Tinjauan program pelatihan dilakukan namun tidak menggunakan metode evaluasi yang terstruktur (misal Kirkpatrick)"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.2.1",lvl:"A",desc:"Anggota manajemen eksekutif dan pengurus berperan serta dalam pelatihan yang mencakup kewajiban hukum dan prinsip K3",reg:["PP No. 50/2012 Klausul 12.2.1","UU No. 1/1970 Pasal 14 tentang kewajiban pengurus","ISO 45001:2018 Klausul 5.1 tentang Leadership"],mayor:"Manajemen eksekutif belum pernah mengikuti pelatihan K3 terkait kewajiban hukum dan prinsip SMK3",minor:"Sebagian manajemen eksekutif sudah mendapat pelatihan K3 namun tidak semua atau belum diperbarui dalam 3 tahun terakhir"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.2.2",lvl:"A",desc:"Manajer dan pengawas/penyelia menerima pelatihan yang sesuai dengan peran dan tanggung jawab mereka",reg:["PP No. 50/2012 Klausul 12.2.2","ISO 45001:2018 Klausul 7.2","Permenaker No. 05/MEN/1996 Elemen 12.3"],mayor:"Manajer lini dan penyelia tidak mendapat pelatihan K3 yang relevan dengan perannya sebagai ujung tombak pengawasan K3 di lapangan",minor:"Pelatihan sudah diberikan kepada manajer dan penyelia namun tidak mencakup kompetensi K3 khusus sesuai jenis bahaya di unit kerjanya"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.3.1",lvl:"A",desc:"Pelatihan diberikan kepada semua tenaga kerja termasuk tenaga kerja baru dan yang dipindahkan agar dapat melaksanakan tugasnya secara aman",reg:["PP No. 50/2012 Klausul 12.3.1","UU No. 1/1970 Pasal 9 tentang kewajiban memberikan petunjuk K3","Permenaker No. 05/MEN/1996 Elemen 12.4"],mayor:"Tenaga kerja baru langsung ditempatkan di area kerja berisiko tanpa melalui pelatihan K3 orientasi (safety induction) terlebih dahulu",minor:"Safety induction dilakukan namun materinya tidak mencakup bahaya spesifik di area kerja yang bersangkutan"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.3.2",lvl:"T",desc:"Pelatihan diberikan kepada tenaga kerja apabila di tempat kerjanya terjadi perubahan sarana produksi atau proses",reg:["PP No. 50/2012 Klausul 12.3.2","ISO 45001:2018 Klausul 8.1.3 tentang Management of Change","Permenaker No. 05/MEN/1996"],mayor:"Setelah perubahan proses/peralatan, tenaga kerja yang terdampak langsung mengoperasikan sistem baru tanpa pelatihan atau refreshing K3",minor:"Pelatihan diberikan setelah perubahan namun tidak mencakup semua pekerja yang terdampak oleh perubahan tersebut"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.3.3",lvl:"L",desc:"Pengusaha atau pengurus memberikan pelatihan penyegaran kepada semua tenaga kerja",reg:["PP No. 50/2012 Klausul 12.3.3","ISO 45001:2018 Klausul 7.2","Permenaker No. 05/MEN/1996 Elemen 12"],mayor:"Tidak ada program pelatihan penyegaran K3 — kompetensi K3 tenaga kerja tidak dipelihara seiring berjalannya waktu",minor:"Pelatihan penyegaran dilakukan namun frekuensinya tidak memadai atau tidak mencakup semua tenaga kerja secara merata"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.4.1",lvl:"T",desc:"Terdapat prosedur yang menetapkan persyaratan untuk memberikan taklimat (briefing) kepada pengunjung dan mitra kerja guna menjamin K3",reg:["PP No. 50/2012 Klausul 12.4.1","ISO 45001:2018 Klausul 8.1.4.3 tentang Contractors","UU No. 1/1970 Pasal 14 huruf b"],mayor:"Tidak ada prosedur briefing K3 untuk pengunjung dan kontraktor yang masuk ke area kerja — pihak eksternal tidak diinformasikan tentang bahaya dan aturan K3",minor:"Prosedur briefing ada namun tidak selalu dilaksanakan atau materinya tidak mencakup bahaya spesifik di area yang akan dikunjungi"},
+  {e:12,en:"Pengembangan Keterampilan dan Kemampuan",k:"12.5.1",lvl:"A",desc:"Perusahaan mempunyai sistem yang menjamin kepatuhan terhadap persyaratan lisensi atau kualifikasi sesuai peraturan untuk tugas khusus",reg:["PP No. 50/2012 Klausul 12.5.1","Berbagai Permenaker tentang operator: PER.05/MEN/1985 (Pesawat Angkat), PER.04/MEN/1985 (Pesawat Tenaga)","Permenaker No. PER.02/MEN/1992 tentang Ahli K3"],mayor:"Operator peralatan berbahaya beroperasi tanpa lisensi yang dipersyaratkan regulasi — tidak ada sistem pemantauan sertifikasi operator",minor:"Sistem pemantauan sertifikasi ada namun tidak proaktif dalam menangani lisensi yang akan habis masa berlakunya"}
+];
+
+/* ── Bootstrap element filter ─────────────────────────────── */
+const elemenNames = {};
+data.forEach(d => { elemenNames[d.e] = d.en; });
+const elemenSelect = document.getElementById('elemenFilter');
+Object.keys(elemenNames).sort((a,b)=>a-b).forEach(e => {
+  const o = document.createElement('option');
+  o.value = e;
+  o.textContent = `Elemen ${e}: ${elemenNames[e]}`;
+  elemenSelect.appendChild(o);
+});
+
+/* ── Render ────────────────────────────────────────────────── */
+function render() {
+  const q   = document.getElementById('searchInput').value.toLowerCase();
+  const lvl = document.getElementById('levelFilter').value;
+  const el  = document.getElementById('elemenFilter').value;
+
+  const filtered = data.filter(d => {
+    const match  = !q || d.k.includes(q) || d.desc.toLowerCase().includes(q)
+                   || d.reg.some(r => r.toLowerCase().includes(q))
+                   || d.mayor.toLowerCase().includes(q)
+                   || d.minor.toLowerCase().includes(q)
+                   || d.en.toLowerCase().includes(q);
+    const lmatch = !lvl || d.lvl === lvl;
+    const ematch = !el  || String(d.e) === el;
+    return match && lmatch && ematch;
+  });
+
+  const grouped = {};
+  filtered.forEach(d => {
+    if (!grouped[d.e]) grouped[d.e] = { name: d.en, items: [] };
+    grouped[d.e].items.push(d);
+  });
+
+  /* Stats */
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat">
+      <div class="stat-icon blue">📋</div>
+      <div><strong>${filtered.length}</strong><span>Klausul ditampilkan</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon purple">🗂</div>
+      <div><strong>${Object.keys(grouped).length}</strong><span>Elemen aktif</span></div>
+    </div>`;
+
+  const out = document.getElementById('output');
+  if (!filtered.length) {
+    out.innerHTML = '<div class="no-result"><span class="icon">🔍</span>Tidak ada hasil yang cocok dengan pencarian</div>';
+    return;
+  }
+
+  out.innerHTML = Object.keys(grouped).sort((a,b)=>a-b).map(e => {
+    const g = grouped[e];
+    return `<div class="elemen-group">
+      <div class="elemen-title" onclick="this.parentElement.classList.toggle('collapsed')">
+        <span class="title-left">
+          <span class="elemen-num">${e}</span>
+          <span>Elemen ${e}: ${g.name}</span>
+        </span>
+        <span class="elemen-count">${g.items.length} klausul <span class="chevron">▼</span></span>
+      </div>
+      <div class="cards">
+        ${g.items.map(d => `
+          <div class="card">
+            <div class="card-header">
+              <span class="klausul-badge">${d.k}</span>
+              <span class="level-badge level-${d.lvl.toLowerCase()}">${d.lvl==='A'?'Tingkat Awal':d.lvl==='T'?'Tingkat Transisi':'Tingkat Lanjutan'}</span>
+              <span class="card-title">${d.desc}</span>
+            </div>
+            <div class="regulasi-section">
+              <div class="reg-label">Regulasi Terkait</div>
+              ${d.reg.map(r => renderRegItem(r)).join('')}
+            </div>
+            <div class="temuan-row">
+              <div class="temuan-box mayor-box">
+                <div class="temuan-label mayor-label">Temuan Mayor</div>
+                <div class="temuan-text">${d.mayor}</div>
+              </div>
+              <div class="temuan-box minor-box">
+                <div class="temuan-label minor-label">Temuan Minor</div>
+                <div class="temuan-text">${d.minor}</div>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+render();
+</script>
+</body>
+</html>
